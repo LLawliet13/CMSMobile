@@ -11,9 +11,36 @@ public class Account {
     private String email;
     private String password;
     private String username;
+    private String address;
+    private String phone;
     private int role_id;// luc add account phai tu cung cap truong nay
 
     public Account() {
+    }
+
+    public Account(String email, String password, String username, String address, String phone, int role_id) {
+        this.email = email;
+        this.password = password;
+        this.username = username;
+        this.address = address;
+        this.phone = phone;
+        this.role_id = role_id;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public int getAccount_id() {

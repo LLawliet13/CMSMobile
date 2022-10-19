@@ -32,5 +32,5 @@ public interface AccountDAO {
     Optional<Account> findById(int id);
 
     @Query("Select * from Account where email like :mail")
-    List<Account> findByEmail(String mail);
+    Optional<Account> findByEmail(String mail);
 }
