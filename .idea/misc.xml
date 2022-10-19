@@ -3,13 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-<<<<<<< HEAD
-        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1785" />
-        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1785" />
-        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_main.xml" value="0.1" />
-=======
         <entry key="..\:/AndroidStudioProjects/CMSMobile/app/src/main/res/layout/activity_main.xml" value="0.1" />
->>>>>>> 740fba16ea32ed4991c51cdd64594c9933d112c5
+        <entry key="..\:/AndroidStudioProjects/CMSMobile/app/src/main/res/layout/activity_register.xml" value="0.11041666666666666" />
       </map>
     </option>
   </component>
