@@ -9,16 +9,16 @@ public class Course {
     private int course_id;
 
     private String name;
-    private int class_id;
+    private Integer class_id;
     public Course(){
 
     }
 
-    public int getClass_id() {
+    public Integer getClass_id() {
         return class_id;
     }
 
-    public void setClass_id(int class_id) {
+    public void setClass_id(Integer class_id) {
         this.class_id = class_id;
     }
 
