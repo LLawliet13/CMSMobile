@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     private RoleRepository roleRepository;
     private AccountRepository accountRepository;
+
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
