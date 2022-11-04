@@ -14,9 +14,10 @@ public class Account {
     private String address;
     private String phone;
     private int role_id;// luc add account phai tu cung cap truong nay
-    private int token_change_password
+    private int token_change_password;
 
     public Account() {
+
     }
 
     public int getToken_change_password() {
