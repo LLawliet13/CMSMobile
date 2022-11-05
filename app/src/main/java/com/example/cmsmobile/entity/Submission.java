@@ -6,19 +6,19 @@ import androidx.room.PrimaryKey;
 @Entity
 public class Submission {
     @PrimaryKey(autoGenerate = true)
-    private int submisison_id;
+    private int submission_id;
     private String content;
-//    private String files;
+    private String files;
     private Float grade;
     private int account_id;
     private int exam_id;
 
-    public int getSubmisison_id() {
-        return submisison_id;
+    public int getSubmission_id() {
+        return submission_id;
     }
 
-    public void setSubmisison_id(int submisison_id) {
-        this.submisison_id = submisison_id;
+    public void setSubmission_id(int submission_id) {
+        this.submission_id = submission_id;
     }
 
     public String getContent() {
@@ -27,6 +27,14 @@ public class Submission {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getFiles() {
+        return files;
+    }
+
+    public void setFiles(String files) {
+        this.files = files;
     }
 
     public Float getGrade() {

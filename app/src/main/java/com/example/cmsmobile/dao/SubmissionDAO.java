@@ -15,12 +15,12 @@ import java.util.List;
 @Dao
 public interface SubmissionDAO {
     @Insert(onConflict = REPLACE)
-    abstract void insert(Submission submision);
+    abstract void insert(Submission submission);
 
     @Query("Select * From Submission")
     List<Submission> getAll();
 
-    @Query("Update Submission Set content = :content, grade = :grade Where submisison_id = :submission_id")
+    @Query("Update Submission Set content = :content, grade = :grade Where submission_id = :submission_id")
     void update(int submission_id, String content, Float grade, int account_id, int exam_id );
 
     @Delete

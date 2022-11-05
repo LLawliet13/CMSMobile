@@ -14,65 +14,29 @@
         android:theme="@style/Theme.CMSMobile"
         tools:targetApi="31">
         <activity
-            android:name=".ListLectureActivity"
+            android:name=".activity.ListLectureActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".activity.AddLectureActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".activity.GradingActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".activity.EditExamSubmissionActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".activity.AddExamSubmissionActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".activity.ViewExamSubmissionActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".AddLectureActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".GradingActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".EditExamSubmissionActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".AddExamSubmissionActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".ViewExamSubmisisonActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".ViewExamSubmissionActivity"
-            android:exported="false" />
-        <activity
-            android:name=".DashboardActivity"
-            android:exported="false" />
         <activity
             android:name=".activity.UpdateProfileActivity"
             android:exported="false" />
@@ -87,12 +51,8 @@
             android:exported="false" />
         <activity
             android:name=".activity.MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
