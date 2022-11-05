@@ -8,7 +8,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="green_background">#adc677</color>
+    <color name="pink_background">#FFC1D5</color>
     <color name="submit_btn">#CEED2D3D</color>
+    <color name="red_btn">#CEED2D3D</color>
+    <color name="success_btn">#CE1ABC08</color>
     <color name="dashboard_btn">#CEF37F1A</color>
     <color name="home_btn">#CE1877F7</color>
 </resources>
