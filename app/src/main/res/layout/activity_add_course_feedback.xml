@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.AddLectureActivity">
+    tools:context=".activity.AddCourseFeedbackActivity">
+
     <RelativeLayout
         android:id="@+id/header_title"
         android:layout_width="match_parent"
@@ -60,93 +61,31 @@
         android:padding="10dp">
 
         <TextView
-            android:id="@+id/tv_lecture"
+            android:id="@+id/tv_submit_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
             android:background="@color/green_background"
-            android:text="Add New Lecture"
+            android:text="My Feedback"
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
-            android:id="@+id/linearLayout1"
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="188dp"
-            android:background="@color/pink_background"
-            android:orientation="vertical"
-            android:padding="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.473"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="5dp"
-                android:text="Play date"
-                android:textSize="12dp" />
-
-            <EditText
-                android:id="@+id/et_lecture_date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:inputType="datetime"
-                android:padding="10dp"
-                android:scrollbars="vertical"
-                android:textSize="13dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout0"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:background="@color/pink_background"
-            android:orientation="vertical"
-            android:padding="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.526"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="5dp"
-                android:text="Lecture Name"
-                android:textSize="12dp" />
-
-            <EditText
-                android:id="@+id/et_lecture_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:inputType="numberDecimal"
-                android:padding="10dp"
-                android:scrollbars="vertical"
-                android:textSize="13dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="252dp"
+            android:layout_marginTop="68dp"
             android:background="@color/pink_background"
             android:orientation="vertical"
             android:padding="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.157"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_lecture">
+            app:layout_constraintTop_toTopOf="@+id/tv_submit_title">
 
             <TextView
                 android:layout_width="match_parent"
@@ -156,7 +95,7 @@
                 android:textSize="12dp" />
 
             <EditText
-                android:id="@+id/et_grade_desc"
+                android:id="@+id/et_submission_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
@@ -169,23 +108,24 @@
                 android:padding="10dp"
                 android:scrollbars="vertical"
                 android:textSize="13dp" />
+
         </LinearLayout>
 
         <Button
-            android:id="@+id/btn_add_grade"
+            android:id="@+id/btn_add_feedback"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:backgroundTint="@color/success_btn"
-            android:text="CREATE"
+            android:text="SAVE"
             android:textSize="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.276"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
         <Button
-            android:id="@+id/btn_cancel_grade"
+            android:id="@+id/btn_cancel_feedback"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -193,10 +133,9 @@
             android:text="CANCEL"
             android:textSize="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.736"
+            app:layout_constraintHorizontal_bias="0.727"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </RelativeLayout>
