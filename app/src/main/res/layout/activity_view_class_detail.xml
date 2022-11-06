@@ -1,146 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:background="@color/green_background"
+    android:orientation="vertical"
+    tools:context=".activity.ViewClassDetailActivity">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/green_background"
-        android:orientation="vertical"
-        tools:context=".activity.ViewClassDetailActivity">
+        android:layout_height="wrap_content">
 
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:layout_gravity="end|top"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="25dp"
-                android:layout_marginBottom="5dp"
-                android:backgroundTint="@color/orange"
-                android:text="Dashboard"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-        </GridLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:background="@color/white" />
-
-        <TextView
-            android:id="@+id/courseName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:text="Course Name - Lecture Name"
+        <Button
+            android:layout_gravity="end|top"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/orange"
+            android:text="Dashboard"
             android:textColor="@color/black"
-            android:textSize="25dp"
             android:textStyle="bold" />
+    </GridLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/white" />
+
+    <TextView
+        android:id="@+id/courseName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:text="Course Name - Lecture Name"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/className"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:text="Class Name"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp">
 
         <TextView
-            android:id="@+id/className"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:text="Class Name"
-            android:textColor="@color/black"
-            android:textSize="25dp"
-            android:textStyle="bold" />
-
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Home"
-                android:textColor="@color/black" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="  /  "
-                android:textColor="@color/black" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Course"
-                android:textColor="@color/black" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="  /  "
-                android:textColor="@color/black" />
-
-            <TextView
-                android:id="@+id/courseRedirect"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Course Name"
-                android:textColor="@color/black" />
-        </GridLayout>
+            android:text="Home"
+            android:textColor="@color/black" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/white" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  /  "
+            android:textColor="@color/black" />
 
-        <GridLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Course"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  /  "
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/courseRedirect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Course Name"
+            android:textColor="@color/black" />
+    </GridLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:columnCount="1"
+        android:orientation="horizontal"
+        android:textAlignment="center">
+
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/pinky"
+            android:text="Announcements"
+            android:textColor="@color/black" />
+
+        <Button
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:columnCount="1"
-            android:orientation="horizontal"
-            android:textAlignment="center">
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/white"
+            android:text="Attachments"
+            android:textColor="@color/black" />
+    </GridLayout>
 
-            <Button
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_row="0"
-                android:layout_gravity="center"
-                android:layout_margin="5dp"
-                android:backgroundTint="@color/pinky"
-                android:text="Announcements"
-                android:textColor="@color/black" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white" />
 
-            <Button
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="5dp"
-                android:backgroundTint="@color/white"
-                android:text="Attachments"
-                android:textColor="@color/black" />
-        </GridLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/white" />
+    <Button
+        android:id="@+id/btn_listExam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="40dp"
+        android:text="View class's Exams"></Button>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rcvClassView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="20dp" >
 
-        </androidx.recyclerview.widget.RecyclerView>
-
-    </LinearLayout>
-</ScrollView>
+</LinearLayout>
