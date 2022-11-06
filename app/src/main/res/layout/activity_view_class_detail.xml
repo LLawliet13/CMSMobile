@@ -36,6 +36,7 @@
         android:layout_marginRight="10dp"
         android:text="Course Name - Lecture Name"
         android:textSize="25dp"
+        android:id="@+id/course_name"
         android:textColor="@color/black"
         android:textStyle="bold"/>
 
@@ -47,6 +48,7 @@
         android:layout_marginRight="10dp"
         android:text="Class Name"
         android:textSize="25dp"
+        android:id="@+id/class_name"
         android:textColor="@color/black"
         android:textStyle="bold"/>
 
@@ -84,7 +86,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="Course Name"/>
+            android:text="Course Name"
+            android:id="@+id/course_redirect"/>
     </GridLayout>
 
     <TextView

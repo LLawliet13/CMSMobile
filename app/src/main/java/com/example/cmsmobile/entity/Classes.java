@@ -4,13 +4,13 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
-public class Class {
+public class Classes {
     @PrimaryKey(autoGenerate = true)
     private int id;
 
     private String name;
 
-    public Class(){}
+    public Classes(){}
 
     public int getId() {
         return id;

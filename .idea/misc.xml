@@ -8,18 +8,13 @@
         <entry key="..\:/AndroidStudioProjects/CMSMobile/app/src/main/res/layout/activity_register.xml" value="0.11041666666666666" />
         <entry key="..\:/AndroidStudioProjects/CMSMobile/app/src/main/res/layout/activity_update_profile.xml" value="0.176" />
         <entry key="..\:/AndroidStudioProjects/CMSMobile/app/src/main/res/layout/role_item.xml" value="0.1328125" />
-        <entry key="..\:/FPT/Semester 7/CMSMobile/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.121" />
-        <entry key="..\:/FPT/Semester 7/CMSMobile/app/src/main/res/drawable/border.xml" value="0.12" />
-        <entry key="..\:/FPT/Semester 7/CMSMobile/app/src/main/res/drawable/ic_baseline_dehaze_24.xml" value="0.121" />
-        <entry key="..\:/FPT/Semester 7/CMSMobile/app/src/main/res/drawable/ic_border.xml" value="0.1775" />
-        <entry key="..\:/FPT/Semester 7/CMSMobile/app/src/main/res/drawable/ic_launcher_background.xml" value="0.121" />
-        <entry key="..\:/FPT/Semester 7/CMSMobile/app/src/main/res/layout/activity_add_class.xml" value="0.2" />
-        <entry key="..\:/FPT/Semester 7/CMSMobile/app/src/main/res/layout/activity_add_exam.xml" value="0.264" />
-        <entry key="..\:/FPT/Semester 7/CMSMobile/app/src/main/res/layout/activity_edit_class.xml" value="0.10989583333333333" />
-        <entry key="..\:/FPT/Semester 7/CMSMobile/app/src/main/res/layout/activity_edit_exam.xml" value="0.10989583333333333" />
-        <entry key="..\:/FPT/Semester 7/CMSMobile/app/src/main/res/layout/activity_main.xml" value="0.10989583333333333" />
-        <entry key="..\:/FPT/Semester 7/CMSMobile/app/src/main/res/layout/activity_view_class_detail.xml" value="0.176" />
-        <entry key="..\:/FPT/Semester 7/CMSMobile/app/src/main/res/layout/activity_view_exam.xml" value="0.264" />
+        <entry key="..\:/FPT/Semester 7/CMSMobile/app/src/main/res/layout/activity_add_class.xml" value="0.264" />
+        <entry key="..\:/FPT/Semester 7/CMSMobile/app/src/main/res/layout/activity_add_exam.xml" value="0.2" />
+        <entry key="..\:/FPT/Semester 7/CMSMobile/app/src/main/res/layout/activity_edit_class.xml" value="0.1897644927536232" />
+        <entry key="..\:/FPT/Semester 7/CMSMobile/app/src/main/res/layout/activity_edit_exam.xml" value="0.1897644927536232" />
+        <entry key="..\:/FPT/Semester 7/CMSMobile/app/src/main/res/layout/activity_forget_password.xml" value="0.10989583333333333" />
+        <entry key="..\:/FPT/Semester 7/CMSMobile/app/src/main/res/layout/activity_view_class_detail.xml" value="0.2" />
+        <entry key="..\:/FPT/Semester 7/CMSMobile/app/src/main/res/layout/activity_view_exam.xml" value="0.1897644927536232" />
       </map>
     </option>
   </component>
