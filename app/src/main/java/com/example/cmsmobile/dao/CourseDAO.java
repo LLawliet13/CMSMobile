@@ -25,10 +25,12 @@ public interface CourseDAO {
     @Delete
     void deleteCourse(Course course);
 
-    @Query("Select * from Course ")
+    @Query("Select * from Course")
     List<Course> getAllCourse();
 
     @Query("Select * from Course where name = :name ")
     Optional<Course> findByName(String name);
 
+    @Query("Select * from Course where course_id = :id ")
+    Optional<Course> findById(int id);
 }
