@@ -34,4 +34,9 @@ public interface CourseDAO {
     @Query("Select * from Course where name = :name ")
     Optional<Course> findByName(String name);
 
+    @Query("SELECT * FROM Course WHERE class_id=:class_id")
+    Course findCourseByClassId(int class_id);
+
+    @Query("SELECT * FROM Course WHERE course_id=:course_id")
+    Course findCourseById(int course_id);
 }
