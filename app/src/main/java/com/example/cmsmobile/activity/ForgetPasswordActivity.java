@@ -18,6 +18,8 @@ public class ForgetPasswordActivity extends AppCompatActivity {
     private void checkIfExist(){
 
     }
-    private void sendEmail(){}
+    private void sendEmail(){
+
+    }
 
 }
