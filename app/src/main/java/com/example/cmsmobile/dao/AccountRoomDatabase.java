@@ -14,7 +14,10 @@ import com.example.cmsmobile.entity.Account;
 public abstract class AccountRoomDatabase extends RoomDatabase {
     private final static String DATABASE_NAME = "CMSMobileApp";
     public static AccountDAO accountDAO;
-
+    public static CourseDAO courseDAO;
+    public static CourseDAO courseDAO() {
+        return null;
+    }
     public static AccountDAO accountDAO() {
         return null;
     }

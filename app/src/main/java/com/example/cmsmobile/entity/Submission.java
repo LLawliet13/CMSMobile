@@ -13,9 +13,9 @@ public class Submission {
     private int account_id;
     private int exam_id;
 
-    public Submission(int submission_id) {
-        this.submission_id = submission_id;
-    }
+//    public Submission(int submission_id) {
+//        this.submission_id = submission_id;
+//    }
 
     public Submission(int submission_id, String content, String files, Float grade, int account_id, int exam_id) {
         this.submission_id = submission_id;
