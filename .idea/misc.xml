@@ -8,6 +8,7 @@
         <entry key="..\:/AndroidStudioProjects/CMSMobile/app/src/main/res/layout/activity_register.xml" value="0.11041666666666666" />
         <entry key="..\:/AndroidStudioProjects/CMSMobile/app/src/main/res/layout/activity_update_profile.xml" value="0.176" />
         <entry key="..\:/AndroidStudioProjects/CMSMobile/app/src/main/res/layout/role_item.xml" value="0.1328125" />
+<<<<<<< HEAD
         <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.131" />
         <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/drawable/ic_launcher_background.xml" value="0.131" />
         <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/layout/activity_add_announcement.xml" value="0.1" />
@@ -34,6 +35,40 @@
         <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/layout/activity_view_course_detail.xml" value="0.2" />
         <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/layout/activity_view_exam.xml" value="0.176" />
         <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/layout/activity_view_exam_submission.xml" value="0.1" />
+=======
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_add_announcement.xml" value="0.1539855072463768" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_add_class.xml" value="0.1539855072463768" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_add_course_feedback.xml" value="0.1539855072463768" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_add_exam.xml" value="0.1539855072463768" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_add_exam_submission.xml" value="0.1539855072463768" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_add_lecture.xml" value="0.1539855072463768" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_class_list.xml" value="0.1539855072463768" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_dashboard.xml" value="0.1539855072463768" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_edit_class.xml" value="0.1539855072463768" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_edit_exam.xml" value="0.1539855072463768" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_edit_exam_submission.xml" value="0.1539855072463768" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_forget_password.xml" value="0.1539855072463768" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_grading.xml" value="0.1539855072463768" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_home.xml" value="0.22" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_home_activity.xml" value="0.13451086956521738" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_list_lecture.xml" value="0.1539855072463768" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_login.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_main.xml" value="0.13451086956521738" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_recover_password.xml" value="0.1539855072463768" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_register.xml" value="0.1539855072463768" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_search_course.xml" value="0.22" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_update_profile.xml" value="0.1539855072463768" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_view_announcement.xml" value="0.14130434782608695" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_view_class_detail.xml" value="0.1539855072463768" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_view_course_feedback.xml" value="0.1539855072463768" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_view_exam.xml" value="0.1539855072463768" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_view_exam_submission.xml" value="0.1539855072463768" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_view_general_course.xml" value="0.1539855072463768" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_view_grade.xml" value="0.14130434782608695" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/class_item_d.xml" value="0.1539855072463768" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/lecture_item.xml" value="0.1539855072463768" />
+        <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/role_item.xml" value="0.14130434782608695" />
+>>>>>>> 5269ac122b99d419dc11bca541c93089af27ccb3
       </map>
     </option>
   </component>

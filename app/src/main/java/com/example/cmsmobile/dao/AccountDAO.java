@@ -33,7 +33,7 @@ public interface AccountDAO {
 
     @Query("Select * from Account where email like :mail")
     Optional<Account> findByEmail(String mail);
-//    @Query("SELECT * FROM account WHERE username=:username AND password=:password ")
-//    public void Login(String username, String password);
+    @Query("SELECT * FROM account WHERE username=:username AND password=:password ")
+    Account Login(String username, String password);
 
 }
