@@ -138,6 +138,4 @@
         android:layout_gravity="center"
         android:layout_margin="40dp"
         android:text="View class's Exams"></Button>
-
-
 </LinearLayout>
