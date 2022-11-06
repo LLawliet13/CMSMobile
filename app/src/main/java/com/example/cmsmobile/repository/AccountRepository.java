@@ -2,6 +2,7 @@ package com.example.cmsmobile.repository;
 
 import android.content.Context;
 import android.os.Build;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 
@@ -33,7 +34,20 @@ public class AccountRepository {
              new Exception("No Account Found")
         );
     }
-    public List<Account> getAllRoles(){
+    public List<Account> getAllAccounts(){
         return accountDAO.getAll();
+    }
+    public boolean Login(Account account){
+        
+        List<Account> accountList = accountDAO.getAll();
+        for (Account acc : accountList) {
+            if(acc.getUsername() ==  acc.getUsername() && acc.getPassword() == acc.getPassword()){
+                return true;
+            }else{
+
+            }
+            
+        }
+        return true;
     }
 }

@@ -4,30 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.LoginActivity">
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="189dp"
-        android:layout_marginTop="124dp"
-        android:layout_marginEnd="188dp"
-        android:text="Login"
-        android:textSize="48sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".activity.LoginActivity"
+    android:background="@color/green_background">
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/LoginBtn"
         android:layout_width="142dp"
         android:layout_height="48dp"
         android:layout_marginStart="134dp"
         android:layout_marginEnd="135dp"
         android:layout_marginBottom="13dp"
-        android:onClick="onLogin"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:textColor="@color/black"
         android:text="Login"
         app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +31,7 @@
         android:ems="10"
         android:inputType="textPassword"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintBottom_toTopOf="@+id/LoginBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
@@ -69,12 +57,14 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="244dp"
         android:text="Username"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/editTextUserName"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
+        android:textStyle="bold"
         android:layout_height="wrap_content"
         android:layout_marginEnd="245dp"
         android:layout_marginBottom="2dp"
@@ -90,8 +80,37 @@
         android:layout_marginEnd="135dp"
         android:layout_marginBottom="151dp"
         android:text="Register"
+        android:textColor="@color/black"
+        android:backgroundTint="@android:color/darker_gray"
         android:onClick="registerUser"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="19dp"
+        android:text="Back"
+        android:textColor="@color/black"
+        android:backgroundTint="@android:color/darker_gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/forgetBtn"
+        android:layout_width="125dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="62dp"
+        android:text="Forget password?"
+        android:textSize="20px"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/green_background"
+        app:layout_constraintBottom_toTopOf="@+id/LoginBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
+        tools:ignore="TouchTargetSizeCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>
