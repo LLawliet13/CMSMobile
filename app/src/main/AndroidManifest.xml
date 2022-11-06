@@ -72,13 +72,7 @@
             android:name=".activity.LoginActivity"
             android:exported="false"/>
         <activity
-            android:name=".activity.ViewExamActivity"
-            android:exported="false" />
-        <activity
             android:name=".activity.EditClassActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.AddClassActivity"
             android:exported="false" />
         <activity
             android:name=".activity.EditExamActivity"
@@ -109,8 +103,14 @@
 <!--        <activity-->
 <!--            android:name=".activity.ViewClassDetailActivity"-->
 <!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".activity.ViewExamActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".activity.AddClassActivity"-->
+<!--            android:exported="false" />-->
         <activity
-            android:name=".activity.ViewClassDetailActivity"
+            android:name=".activity.AddClassActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -5,6 +5,7 @@ import android.content.Context;
 import com.example.cmsmobile.dao.ClassesDAO;
 import com.example.cmsmobile.entity.CMSDatabase;
 import com.example.cmsmobile.entity.Classes;
+import com.example.cmsmobile.entity.Exam;
 
 import java.util.List;
 
@@ -23,6 +24,10 @@ public class ClassRepository {
         classesDAO.insert(classes);
     }
 
+    public Classes getClassById(int id){
+        return classesDAO.findById(id);
+    }
+
     public List<Classes> getAllClasses() {
         return classesDAO.getAll();
     }
@@ -34,4 +39,5 @@ public class ClassRepository {
     public void removeClasses(Classes classes) {
         classesDAO.delete(classes);
     }
+
 }

@@ -7,10 +7,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.cmsmobile.R;
 import com.example.cmsmobile.adapter.ClassesViewAdapter;
+import com.example.cmsmobile.adapter.ExamViewAdapter;
 import com.example.cmsmobile.entity.Classes;
+import com.example.cmsmobile.entity.Exam;
+import com.example.cmsmobile.repository.ClassRepository;
+import com.example.cmsmobile.repository.ExamRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,17 +26,21 @@ public class ViewClassDetailActivity extends AppCompatActivity {
     private RecyclerView rcvClassView;
 
     private ClassesViewAdapter classesViewAdapter;
-    private List<Classes> listClasses;
+    private ClassRepository classRepository;
+    private List<Exam> listExam;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_class_detail);
 
+        classRepository = new ClassRepository(this);
+
         initUI();
+
         classesViewAdapter = new ClassesViewAdapter();
-        listClasses =new ArrayList<>();
-        classesViewAdapter.setData(listClasses);
+//        listExam = classRepository.;
+        classesViewAdapter.setData(listExam);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         rcvClassView.setLayoutManager(linearLayoutManager);

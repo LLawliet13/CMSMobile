@@ -19,17 +19,18 @@ import com.example.cmsmobile.entity.Account;
 import com.example.cmsmobile.entity.Account_Class;
 import com.example.cmsmobile.entity.Classes;
 import com.example.cmsmobile.entity.Course;
+import com.example.cmsmobile.entity.Exam;
+import com.example.cmsmobile.repository.ClassRepository;
 import com.example.cmsmobile.repository.CourseRepository;
 
 import java.util.List;
 
 public class ClassesViewAdapter extends RecyclerView.Adapter<ClassesViewAdapter.ClassesViewHolder> {
 
-    private List<Classes> listClasses;
-    private Activity activity;
+    private List<Exam> listExam;
 
-    public void setData(List<Classes> list) {
-        this.listClasses = list;
+    public void setData(List<Exam> list) {
+        this.listExam = list;
         notifyDataSetChanged();
     }
 
@@ -42,21 +43,22 @@ public class ClassesViewAdapter extends RecyclerView.Adapter<ClassesViewAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ClassesViewHolder holder, int position) {
-        Classes classes = listClasses.get(position);
-        if (classes == null) {
+        Exam exam = listExam.get(position);
+        if (exam == null) {
             return;
         }
 
-        holder.tvCourseName.setText(classes.getCourse_id());
-        holder.tvClassName.setText(classes.getName());
-        holder.tvCourseRedirect.setText(classes.getName());
+
+//        holder.tvCourseName.setText(classes.getCourse_id());
+//        holder.tvClassName.setText(classes.getName());
+//        holder.tvCourseRedirect.setText(classes.getName());
 
     }
 
     @Override
     public int getItemCount() {
-        if (listClasses != null) {
-            return listClasses.size();
+        if (listExam != null) {
+            return listExam.size();
         }
         return 0;
     }

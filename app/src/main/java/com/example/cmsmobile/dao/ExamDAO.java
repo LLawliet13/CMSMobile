@@ -28,4 +28,7 @@ public interface ExamDAO {
 
     @Query("SELECT * FROM Exam WHERE exam_id = :id")
     Optional<Exam> findById(int id);
+
+    @Query("SELECT * FROM Exam WHERE course_id=:id")
+    List<Exam> findExamsByClassId(int id);
 }
