@@ -14,6 +14,9 @@
         android:theme="@style/Theme.CMSMobile"
         tools:targetApi="31">
         <activity
+            android:name=".AddCourseActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.ClassListActivity"
             android:exported="false" />
         <activity
@@ -39,11 +42,10 @@
             android:exported="false" />
         <activity
             android:name=".activity.AddExamSubmissionActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".activity.ViewExamSubmissionActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".activity.ViewCourseFeedbackActivity"
             android:exported="false" />
@@ -62,15 +64,15 @@
         <activity
             android:name=".activity.HomeActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".activity.LoginActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".activity.ViewExamActivity"
             android:exported="false" />
@@ -104,10 +106,11 @@
         <activity
             android:name=".activity.MainActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
     </application>
 
