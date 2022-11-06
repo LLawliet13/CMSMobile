@@ -20,9 +20,9 @@ public class RoleRepository {
     }
 
     public void setUpRoles() {
-        roleDAO.insert(new Role(1, "ADMIN")
-                , new Role(2, "TEACHER")
-                , new Role(3, "STUDENT"));
+        roleDAO.insert(new Role(1, "admin")
+                , new Role(2, "teacher")
+                , new Role(3, "student"));
     }
     public List<Role> getAllRoles(){
         return roleDAO.getAll();
