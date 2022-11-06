@@ -13,7 +13,7 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:layout_gravity="end||top"
+            android:layout_gravity="end|top"
             android:layout_marginTop="5dp"
             android:layout_marginRight="25dp"
             android:layout_marginBottom="5dp"
@@ -36,7 +36,7 @@
         android:layout_marginRight="10dp"
         android:text="Course Name - Lecture Name"
         android:textSize="25dp"
-        android:id="@+id/course_name"
+        android:id="@+id/courseName"
         android:textColor="@color/black"
         android:textStyle="bold"/>
 
@@ -48,7 +48,7 @@
         android:layout_marginRight="10dp"
         android:text="Class Name"
         android:textSize="25dp"
-        android:id="@+id/class_name"
+        android:id="@+id/className"
         android:textColor="@color/black"
         android:textStyle="bold"/>
 
@@ -87,7 +87,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:text="Course Name"
-            android:id="@+id/course_redirect"/>
+            android:id="@+id/courseRedirect"/>
     </GridLayout>
 
     <TextView
@@ -131,6 +131,7 @@
         android:layout_marginTop="10dp"/>
 
     <GridView
+        android:id="@+id/gridViewClass"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollY="@dimen/cardview_default_radius"
