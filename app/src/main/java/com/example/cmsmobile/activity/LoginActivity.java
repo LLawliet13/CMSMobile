@@ -12,10 +12,15 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.cmsmobile.R;
+import com.example.cmsmobile.dao.AccountDAO;
+import com.example.cmsmobile.dao.AccountRoomDatabase;
+import com.example.cmsmobile.entity.Account;
+import com.example.cmsmobile.repository.AccountRepository;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText editTextUserName, editTextPassword;
-    Button LoginBtn,back;
+    Button LoginBtn, back;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,8 +32,34 @@ public class LoginActivity extends AppCompatActivity {
         LoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                startActivity(intent);
+                String username = editTextUserName.getText().toString();
+                String password = editTextPassword.getText().toString();
+                if (username.isEmpty() || password.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "Fill all field", Toast.LENGTH_LONG).show();
+                } else {
+                    AccountRoomDatabase accountRoomDatabase = AccountRoomDatabase.getDataBase(getApplicationContext());
+                    AccountDAO accountDAO = AccountRoomDatabase.accountDAO();
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Account account = accountDAO.Login(username,password);
+                            if(account == null ){
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toast.makeText(getApplicationContext(), "Invalid", Toast.LENGTH_LONG).show();
+                                    }
+                                });
+                            }else{
+                                String name = account.getUsername();
+                                Intent intent = new Intent(LoginActivity.this, HomeActivity.class).putExtra("name",name);
+                                startActivity(intent);
+                            }
+                        }
+                    }).start();
+
+                }
+
 
             }
 
@@ -41,8 +72,9 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-    public void registerUser(View view){
-        Intent intent = new Intent(getApplicationContext(),RegisterActivity.class);
+
+    public void registerUser(View view) {
+        Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
         startActivity(intent);
     }
 }

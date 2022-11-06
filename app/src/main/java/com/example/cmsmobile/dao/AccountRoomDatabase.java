@@ -1,7 +1,6 @@
 package com.example.cmsmobile.dao;
 
 
-
 import android.content.Context;
 
 import androidx.room.Database;
@@ -14,8 +13,11 @@ import com.example.cmsmobile.entity.Account;
 @Database(entities = {Account.class}, version = 1)
 public abstract class AccountRoomDatabase extends RoomDatabase {
     private final static String DATABASE_NAME = "CMSMobileApp";
+    public static AccountDAO accountDAO;
 
-    public abstract AccountDAO accountDAO();
+    public static AccountDAO accountDAO() {
+        return null;
+    }
 
     private static AccountRoomDatabase INSTANCE;
 
