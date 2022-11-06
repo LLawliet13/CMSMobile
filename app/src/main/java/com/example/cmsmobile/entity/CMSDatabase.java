@@ -19,7 +19,8 @@ import com.example.cmsmobile.dao.FeedbackDAO;
 import com.example.cmsmobile.dao.RoleDAO;
 
 
-@Database(entities = {Role.class, Account.class, Submission.class, Classes.class,Course.class,Announcement.class, Exam.class}, version = 1)
+@Database(entities = {Role.class, Account.class, Submission.class, Classes.class,Course.class,Announcement.class,Account_Class.class
+, Exam.class}, version = 1)
 public abstract class CMSDatabase extends RoomDatabase {
     public abstract RoleDAO roleDAO();
 
