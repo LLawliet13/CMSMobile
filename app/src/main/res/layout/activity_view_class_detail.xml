@@ -138,6 +138,5 @@
         android:layout_height="match_parent"
         android:scrollY="@dimen/cardview_default_radius"
         android:layout_margin="10dp">
-
     </GridView>
 </LinearLayout>

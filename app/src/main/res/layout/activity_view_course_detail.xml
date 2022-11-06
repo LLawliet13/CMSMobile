@@ -96,16 +96,18 @@
         android:layout_gravity="center">
 
         <Button
+            android:id="@+id/btn_view_course_feedback"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_row="0"
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:backgroundTint="@color/pinky"
-            android:text="Feedback"
+            android:text="View Course Feedback"
             android:textColor="@color/black" />
 
         <Button
+            android:id="@+id/btn_view_course_exam"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/white"
@@ -113,6 +115,16 @@
             android:layout_marginBottom="5dp"
             android:text="View Exam"
             android:textColor="@color/black"/>
+        <Button
+            android:id="@+id/btn_add_course_lecture"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/success_btn"
+            android:text="Add Lecture"
+            android:textColor="@color/black" />
     </GridLayout>
 
     <TextView

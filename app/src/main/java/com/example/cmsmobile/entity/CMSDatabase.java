@@ -9,14 +9,18 @@ import androidx.room.RoomDatabase;
 import com.example.cmsmobile.dao.AccountDAO;
 import com.example.cmsmobile.dao.ClassesDAO;
 import com.example.cmsmobile.dao.CourseDAO;
+import com.example.cmsmobile.dao.LectureDAO;
 import com.example.cmsmobile.dao.RoleDAO;
+import com.example.cmsmobile.dao.SubmissionDAO;
 
-@Database(entities = {Role.class,Account.class, Submission.class, Classes.class, Course.class},version = 1)
+@Database(entities = {Role.class,Account.class, Submission.class, Classes.class, Course.class, Lecture.class},version = 1)
 public abstract class CMSDatabase extends RoomDatabase {
     public abstract RoleDAO roleDAO();
     public abstract AccountDAO accountDAO();
     public abstract ClassesDAO classesDAO();
     public abstract CourseDAO courseDAO();
+    public abstract LectureDAO lectureDAO();
+    public abstract SubmissionDAO submissionDAO();
 
     private static volatile CMSDatabase INSTANCE;
 
