@@ -130,12 +130,10 @@
         android:background="@color/white"
         android:layout_marginTop="10dp"/>
 
-    <GridView
-        android:id="@+id/gridViewClass"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvClassView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollY="@dimen/cardview_default_radius"
-        android:layout_margin="10dp">
+        android:layout_margin="20dp"/>
 
-    </GridView>
 </LinearLayout>

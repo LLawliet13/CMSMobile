@@ -134,9 +134,10 @@
         </TableRow>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvExamView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </androidx.recyclerview.widget.RecyclerView>
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"/>
     </TableLayout>
 
 </LinearLayout>

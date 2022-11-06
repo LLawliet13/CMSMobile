@@ -28,6 +28,9 @@ public interface CourseDAO {
     @Query("Select * from Course ")
     List<Course> getAllCourse();
 
+    @Query("SELECT * FROM Course where course_id = :id")
+    Optional<Course> findById(int id);
+
     @Query("Select * from Course where name = :name ")
     Optional<Course> findByName(String name);
 

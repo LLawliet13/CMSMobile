@@ -1,5 +1,6 @@
 package com.example.cmsmobile.adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.text.Layout;
 import android.view.LayoutInflater;
@@ -13,18 +14,23 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cmsmobile.R;
+import com.example.cmsmobile.dao.CourseDAO;
+import com.example.cmsmobile.entity.Account;
+import com.example.cmsmobile.entity.Account_Class;
 import com.example.cmsmobile.entity.Classes;
+import com.example.cmsmobile.entity.Course;
+import com.example.cmsmobile.repository.CourseRepository;
 
 import java.util.List;
 
 public class ClassesViewAdapter extends RecyclerView.Adapter<ClassesViewAdapter.ClassesViewHolder> {
 
     private List<Classes> listClasses;
-    private Context context;
+    private Activity activity;
 
-    public void setData(List<Classes> list, Context context) {
+    public void setData(List<Classes> list) {
         this.listClasses = list;
-        this.context = context;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -41,7 +47,10 @@ public class ClassesViewAdapter extends RecyclerView.Adapter<ClassesViewAdapter.
             return;
         }
 
-        holder.tvCourseName.setText(classes.getName());
+        holder.tvCourseName.setText(classes.getCourse_id());
+        holder.tvClassName.setText(classes.getName());
+        holder.tvCourseRedirect.setText(classes.getName());
+
     }
 
     @Override
@@ -55,13 +64,11 @@ public class ClassesViewAdapter extends RecyclerView.Adapter<ClassesViewAdapter.
     public class ClassesViewHolder extends RecyclerView.ViewHolder {
 
         private TextView tvCourseName, tvClassName, tvCourseRedirect;
-        private GridView gvClass;
         public ClassesViewHolder(@NonNull View itemView) {
             super(itemView);
             tvCourseName = itemView.findViewById(R.id.courseName);
             tvClassName = itemView.findViewById(R.id.className);
             tvCourseRedirect = itemView.findViewById(R.id.courseRedirect);
-            gvClass = itemView.findViewById(R.id.gridViewClass);
         }
     }
 }
