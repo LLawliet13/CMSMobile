@@ -11,17 +11,27 @@ import java.util.List;
 public class ClassRepository {
     private ClassesDAO classesDAO;
 
-    public ClassRepository(Context context){
+    public ClassRepository(Context context) {
         classesDAO = CMSDatabase.getInstance(context).classesDAO();
     }
 
-    public ClassesDAO getClassesDAO() {return classesDAO;}
+    public ClassesDAO getClassesDAO() {
+        return classesDAO;
+    }
 
-    public void addClasses(Classes classes){classesDAO.insert(classes);}
+    public void addClasses(Classes classes) {
+        classesDAO.insert(classes);
+    }
 
-    public List<Classes> getAllClasses(){return classesDAO.getAll();}
+    public List<Classes> getAllClasses() {
+        return classesDAO.getAll();
+    }
 
-    public void updateClasses(Classes classes){classesDAO.updateClass(classes);}
+    public void updateClasses(Classes classes) {
+        classesDAO.updateClass(classes);
+    }
 
-    public void removeClasses(Classes classes){classesDAO.delete(classes);}
+    public void removeClasses(Classes classes) {
+        classesDAO.delete(classes);
+    }
 }
