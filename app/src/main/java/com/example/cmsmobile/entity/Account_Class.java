@@ -5,7 +5,8 @@ import androidx.room.PrimaryKey;
 
 @Entity
 public class Account_Class {
-
+    @PrimaryKey
+    private int id;
     private Integer account_id;
     private Integer class_id;
 
@@ -14,6 +15,14 @@ public class Account_Class {
 
     public Integer getAccount_id() {
         return account_id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setAccount_id(Integer account_id) {

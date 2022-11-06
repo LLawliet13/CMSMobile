@@ -9,6 +9,8 @@ import com.example.cmsmobile.entity.Exam;
 
 import java.util.List;
 
+import java.util.List;
+
 public class ClassRepository {
     private ClassesDAO classesDAO;
 
@@ -24,7 +26,7 @@ public class ClassRepository {
         classesDAO.insert(classes);
     }
 
-    public Classes getClassById(int id){
+    public Classes getClassById(int id) {
         return classesDAO.findById(id);
     }
 
@@ -40,4 +42,7 @@ public class ClassRepository {
         classesDAO.delete(classes);
     }
 
+    public List<Classes> getAllClassesList() {
+        return classesDAO.getAll();
+    }
 }

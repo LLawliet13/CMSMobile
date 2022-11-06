@@ -1,13 +1,12 @@
 package com.example.cmsmobile.dao;
 
 import androidx.room.Dao;
+
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
-
 import com.example.cmsmobile.entity.Classes;
-
 import java.util.List;
 
 @Dao

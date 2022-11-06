@@ -4,22 +4,22 @@
     android:layout_height="match_parent"
     android:weightSum="100">
     <TextView
-        android:id="@+id/class_name"
+        android:id="@+id/class_name_classListActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="40"></TextView>
     <TextView
-        android:id="@+id/teacher_name"
+        android:id="@+id/teacher_name_classListActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="40"></TextView>
     <Button
-        android:id="@+id/edit_button"
+        android:id="@+id/edit_button_classListActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="10"></Button>
     <Button
-        android:id="@+id/delete_button"
+        android:id="@+id/delete_button_classListActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="10"></Button>
