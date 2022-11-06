@@ -18,6 +18,8 @@ public class Submission {
 //        this.submission_id = submission_id;
 //    }
 //    @Ignore
+
+
     public Submission(int submission_id, String content, String files, Float grade, int account_id, int exam_id) {
         this.submission_id = submission_id;
         this.content = content;
