@@ -63,6 +63,11 @@ public class Announcement {
         this.course_id = course_id;
     }
 
+    public Announcement(String content, String name) {
+        this.content = content;
+        this.name = name;
+    }
+
     public Announcement(String content, @Nullable String file, String name, int account_id, int course_id) {
         this.content = content;
         this.file = file;
