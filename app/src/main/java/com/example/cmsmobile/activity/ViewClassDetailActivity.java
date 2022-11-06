@@ -27,7 +27,7 @@ public class ViewClassDetailActivity extends AppCompatActivity {
 
     private ClassesViewAdapter classesViewAdapter;
     private ClassRepository classRepository;
-    private List<Exam> listExam;
+    private List<Classes> listClass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +39,8 @@ public class ViewClassDetailActivity extends AppCompatActivity {
         initUI();
 
         classesViewAdapter = new ClassesViewAdapter();
-//        listExam = classRepository.;
-        classesViewAdapter.setData(listExam);
+        listClass = new ArrayList<>();
+        classesViewAdapter.setData(listClass);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         rcvClassView.setLayoutManager(linearLayoutManager);

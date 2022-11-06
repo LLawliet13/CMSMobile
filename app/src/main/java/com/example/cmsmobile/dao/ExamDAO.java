@@ -30,5 +30,5 @@ public interface ExamDAO {
     Optional<Exam> findById(int id);
 
     @Query("SELECT * FROM Exam WHERE course_id=:id")
-    List<Exam> findExamsByClassId(int id);
+    List<Exam> findExamsByCourseId(int id);
 }

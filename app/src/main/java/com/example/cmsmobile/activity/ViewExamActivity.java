@@ -13,7 +13,10 @@ import android.widget.Toast;
 
 import com.example.cmsmobile.R;
 import com.example.cmsmobile.adapter.ExamViewAdapter;
+import com.example.cmsmobile.entity.Course;
 import com.example.cmsmobile.entity.Exam;
+import com.example.cmsmobile.repository.CourseRepository;
+import com.example.cmsmobile.repository.ExamRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +28,7 @@ public class ViewExamActivity extends AppCompatActivity {
     private RecyclerView rcvExamView;
 
     private ExamViewAdapter examViewAdapter;
+    private ExamRepository examRepository;
     private List<Exam> listExams;
 
     @Override
@@ -34,6 +38,8 @@ public class ViewExamActivity extends AppCompatActivity {
 
         initUI();
         examViewAdapter = new ExamViewAdapter();
+        examRepository = new ExamRepository(this);
+
         listExams = new ArrayList<>();
         examViewAdapter.setData(listExams);
 

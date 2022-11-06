@@ -36,7 +36,7 @@ public class ExamRepository {
         examDAO.delete(exam);
     }
 
-    public List<Exam> getExamsByClassId(int id){
-        return examDAO.findExamsByClassId(id);
+    public List<Exam> getExamsByCourseId(int id){
+        return examDAO.findExamsByCourseId(id);
     }
 }

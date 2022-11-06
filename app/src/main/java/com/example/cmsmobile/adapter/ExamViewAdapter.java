@@ -36,9 +36,9 @@ public class ExamViewAdapter extends RecyclerView.Adapter<ExamViewAdapter.ExamVi
         if (exam == null) {
             return;
         }
-        holder.tvCourseName.setText(exam.getCourse_id());
-        holder.tvClassName.setText(exam.getName());
-        holder.tvCourseRedirect.setText(exam.getCourse_id());
+//        holder.tvCourseName.setText(exam.getCourse_id());
+//        holder.tvClassName.setText(exam.getName());
+//        holder.tvCourseRedirect.setText(exam.getCourse_id());
     }
 
     @Override
