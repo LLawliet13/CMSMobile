@@ -31,31 +31,31 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        roleRepository = new RoleRepository(this);
-//        accountRepository = new AccountRepository(this);
+        roleRepository = new RoleRepository(this);
+        accountRepository = new AccountRepository(this);
 //        roleRepository.setUpRoles();
 //        accountRepository.addAccount(new Account("dung@gmail.com","123","dung"
 //                ,"Thai binh","0123456789",1));
 //
-//        ListView roleListView = (ListView) findViewById(R.id.role_list);
-//        RoleAdapter adapter = new RoleAdapter(this,  roleRepository.getAllRoles().stream().toArray(Role[]::new));
-//        roleListView.setAdapter(adapter);
-//        Button testButton = findViewById(R.id.select_button_mainactivity);
-//        testButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                try {
-//                    Account acc = accountRepository.getAccountByEmail("dung@gmail.com");
-//                    Intent i = new Intent(MainActivity.this, UpdateProfileActivity.class);
-//                    i.putExtra("username",acc.getUsername());
-//                    i.putExtra("address",acc.getAddress());
-//                    i.putExtra("phone",acc.getPhone());
-//                    startActivity(i);
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        });
+        ListView roleListView = (ListView) findViewById(R.id.role_list);
+        RoleAdapter adapter = new RoleAdapter(this,  roleRepository.getAllRoles().stream().toArray(Role[]::new));
+        roleListView.setAdapter(adapter);
+        Button testButton = findViewById(R.id.select_button_mainactivity);
+        testButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Account acc = accountRepository.getAccountByEmail("dung@gmail.com");
+                    Intent i = new Intent(MainActivity.this, UpdateProfileActivity.class);
+                    i.putExtra("username",acc.getUsername());
+                    i.putExtra("address",acc.getAddress());
+                    i.putExtra("phone",acc.getPhone());
+                    startActivity(i);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
 
 
 

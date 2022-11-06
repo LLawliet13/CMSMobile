@@ -13,6 +13,19 @@ public class Submission {
     private int account_id;
     private int exam_id;
 
+    public Submission(int submission_id) {
+        this.submission_id = submission_id;
+    }
+
+    public Submission(int submission_id, String content, String files, Float grade, int account_id, int exam_id) {
+        this.submission_id = submission_id;
+        this.content = content;
+        this.files = files;
+        this.grade = grade;
+        this.account_id = account_id;
+        this.exam_id = exam_id;
+    }
+
     public int getSubmission_id() {
         return submission_id;
     }
