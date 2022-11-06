@@ -17,6 +17,8 @@ import com.example.cmsmobile.entity.Role;
 import com.example.cmsmobile.repository.AccountRepository;
 import com.example.cmsmobile.repository.RoleRepository;
 
+import org.json.JSONObject;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                     i.putExtra("username",acc.getUsername());
                     i.putExtra("address",acc.getAddress());
                     i.putExtra("phone",acc.getPhone());
+                    i.putExtra("email",acc.getEmail());
                     startActivity(i);
                 } catch (Exception e) {
                     e.printStackTrace();

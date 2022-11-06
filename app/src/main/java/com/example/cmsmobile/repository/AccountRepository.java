@@ -33,7 +33,11 @@ public class AccountRepository {
              new Exception("No Account Found")
         );
     }
-    public List<Account> getAllRoles(){
+    public List<Account> getAllAccounts(){
         return accountDAO.getAll();
+    }
+
+    public void updateAccount(Account account){
+        accountDAO.updateAccount(account);
     }
 }

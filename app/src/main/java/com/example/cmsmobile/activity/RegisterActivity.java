@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.cmsmobile.R;
+import com.example.cmsmobile.entity.Account;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -14,10 +15,13 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
     }
     private EditText email;
     private EditText password;
     private EditText cfPassword;
 
+    private void register(Account account){
 
+    }
 }
