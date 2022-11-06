@@ -8,7 +8,7 @@
     android:background="@color/green_background">
 
     <Button
-        android:id="@+id/add_class_button"
+        android:id="@+id/add_class_classListActivity_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="276dp"
@@ -18,9 +18,10 @@
         app:layout_constraintTop_toTopOf="parent"></Button>
 
     <ListView
+        android:id="@+id/classList_classListActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/add_class_button"
+        app:layout_constraintTop_toBottomOf="@+id/add_class_classListActivity_button"
         app:layout_constraintLeft_toLeftOf="parent">
     </ListView>
 

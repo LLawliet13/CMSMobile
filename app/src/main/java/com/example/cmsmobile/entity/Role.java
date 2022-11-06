@@ -1,6 +1,7 @@
 package com.example.cmsmobile.entity;
 
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity
@@ -11,7 +12,7 @@ public class Role {
     private String name;
 
     public Role(){}
-
+    @Ignore
     public Role(int role_id, String name) {
         this.role_id = role_id;
         this.name = name;

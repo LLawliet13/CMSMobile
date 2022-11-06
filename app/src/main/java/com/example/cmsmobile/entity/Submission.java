@@ -1,6 +1,7 @@
 package com.example.cmsmobile.entity;
 
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity
@@ -14,6 +15,7 @@ public class Submission {
     private int exam_id;
 
     public Submission(String content, String files, Float grade, int account_id, int exam_id) {
+
         this.content = content;
         this.files = files;
         this.grade = grade;

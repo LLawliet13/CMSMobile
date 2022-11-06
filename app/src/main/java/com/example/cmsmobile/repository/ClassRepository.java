@@ -6,6 +6,8 @@ import com.example.cmsmobile.dao.ClassesDAO;
 import com.example.cmsmobile.entity.CMSDatabase;
 import com.example.cmsmobile.entity.Classes;
 
+import java.util.List;
+
 public class ClassRepository {
     private ClassesDAO classesDAO;
 
@@ -14,6 +16,8 @@ public class ClassRepository {
     }
 
     public ClassesDAO getClassesDAO() {return classesDAO;}
-
+    public List<Classes> getAllClassesList(){
+        return classesDAO.getAll();
+    }
     public void addClasses(Classes classes){classesDAO.insert(classes);}
 }

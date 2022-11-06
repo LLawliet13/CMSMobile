@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.cmsmobile.R;
+
 import com.example.cmsmobile.repository.AccountRepository;
 import com.example.cmsmobile.repository.RoleRepository;
 
@@ -22,10 +23,16 @@ public class HomeActivity extends AppCompatActivity {
     Button logoutButton;
     RoleRepository roleRepository;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        roleRepository = new RoleRepository(this);
+        if (roleRepository.getAllRoles().size() == 0)
+            roleRepository.setUpRoles();
+
+        Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
         accountName = findViewById(R.id.accountName);
         String name = getIntent().getStringExtra("name");
         accountName.setText(name);
