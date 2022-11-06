@@ -9,17 +9,11 @@ public class Course {
     private int course_id;
 
     private String name;
-    private Integer class_id;
-    public Course(){
+    private int creator_id;
 
-    }
-
-    public Integer getClass_id() {
-        return class_id;
-    }
-
-    public void setClass_id(Integer class_id) {
-        this.class_id = class_id;
+    public Course(String name, int creator_id) {
+        this.name = name;
+        this.creator_id = creator_id;
     }
 
     public int getCourse_id() {
@@ -38,4 +32,11 @@ public class Course {
         this.name = name;
     }
 
+    public int getCreator_id() {
+        return creator_id;
+    }
+
+    public void setCreator_id(int creator_id) {
+        this.creator_id = creator_id;
+    }
 }
