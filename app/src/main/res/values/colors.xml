@@ -8,4 +8,18 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="green_background">#adc677</color>
+    <color name="pink_background">#FFC1D5</color>
+    <color name="submit_btn">#CEED2D3D</color>
+    <color name="red_btn">#CEED2D3D</color>
+    <color name="gray_background">#CCCCD6D7</color>
+    <color name="success_btn">#CE1ABC08</color>
+    <color name="dashboard_btn">#CEF37F1A</color>
+    <color name="home_btn">#CE1877F7</color>
+    <color name="orange">#ffa439</color>
+    <color name="pinky">#ffd1d1</color>
+    <color name="green_highlight">#46ad26</color>
+    <color name="pick_more">#dca2a2</color>
+    <color name="success">#2cd111</color>
+    <color name="alert">#fc5c5c</color>
+    <color name="gray">#d9d9d9</color>
 </resources>

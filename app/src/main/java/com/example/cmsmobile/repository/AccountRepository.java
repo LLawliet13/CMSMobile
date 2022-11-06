@@ -2,6 +2,7 @@ package com.example.cmsmobile.repository;
 
 import android.content.Context;
 import android.os.Build;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 
@@ -39,5 +40,18 @@ public class AccountRepository {
 
     public void updateAccount(Account account){
         accountDAO.updateAccount(account);
+    }
+    public boolean Login(Account account){
+        
+        List<Account> accountList = accountDAO.getAll();
+        for (Account acc : accountList) {
+            if(acc.getUsername() ==  acc.getUsername() && acc.getPassword() == acc.getPassword()){
+                return true;
+            }else{
+
+            }
+            
+        }
+        return true;
     }
 }

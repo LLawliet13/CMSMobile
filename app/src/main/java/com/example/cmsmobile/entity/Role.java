@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey;
 
 @Entity
 public class Role {
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     private int role_id;
 
     private String name;

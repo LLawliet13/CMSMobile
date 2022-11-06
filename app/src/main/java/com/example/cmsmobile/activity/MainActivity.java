@@ -35,10 +35,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         roleRepository = new RoleRepository(this);
         accountRepository = new AccountRepository(this);
-        roleRepository.setUpRoles();
-        accountRepository.addAccount(new Account("dung@gmail.com","123","dung"
-                ,"Thai binh","0123456789",1));
-
+//        roleRepository.setUpRoles();
+//        accountRepository.addAccount(new Account("dung@gmail.com","123","dung"
+//                ,"Thai binh","0123456789",1));
+//
         ListView roleListView = (ListView) findViewById(R.id.role_list);
         RoleAdapter adapter = new RoleAdapter(this,  roleRepository.getAllRoles().stream().toArray(Role[]::new));
         roleListView.setAdapter(adapter);
