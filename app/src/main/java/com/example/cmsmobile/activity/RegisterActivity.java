@@ -29,7 +29,11 @@ public class RegisterActivity extends AppCompatActivity {
         password = findViewById(R.id.editText_password);
         cfPassword = findViewById(R.id.editText_cfPassword);
         accountRepository = new AccountRepository(this);
-        role_id = getIntent().getExtras().getInt("role");
+        try {
+            role_id = getIntent().getExtras().getInt("role");
+        }catch (Exception ex){
+            role_id = 0;
+        }
         registerButton = findViewById(R.id.register_button);
         backButton = findViewById(R.id.register_back_button);
         registerButton.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +62,7 @@ public class RegisterActivity extends AppCompatActivity {
             String passwordValue = password.getText().toString();
             String cfPasswordValue = cfPassword.getText().toString();
 
-            if (passwordValue.equals(cfPasswordValue))
+            if (!passwordValue.equals(cfPasswordValue))
                 throw new Exception("Password and cfPassword is not the same");
 
             if(EmailValue.isEmpty())

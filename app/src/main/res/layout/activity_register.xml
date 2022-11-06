@@ -22,7 +22,7 @@
     <EditText
         android:id="@+id/editText_email"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         app:layout_constraintTop_toBottomOf="@+id/emailLabel"
@@ -44,11 +44,12 @@
     <EditText
         android:id="@+id/editText_password"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         app:layout_constraintTop_toBottomOf="@+id/passwordLabel"
         app:layout_constraintLeft_toLeftOf="parent"
+        android:inputType="textPassword"
         android:text="">
     </EditText>
 
@@ -66,11 +67,12 @@
     <EditText
         android:id="@+id/editText_cfPassword"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         app:layout_constraintTop_toBottomOf="@+id/cfPasswordLabel"
         app:layout_constraintLeft_toLeftOf="parent"
+        android:inputType="textPassword"
         android:text="">
     </EditText>
 
