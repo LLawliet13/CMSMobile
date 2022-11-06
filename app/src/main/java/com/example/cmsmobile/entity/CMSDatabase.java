@@ -10,7 +10,7 @@ import com.example.cmsmobile.dao.AccountDAO;
 import com.example.cmsmobile.dao.ClassesDAO;
 import com.example.cmsmobile.dao.RoleDAO;
 
-@Database(entities = {Role.class,Account.class, Submission.class},version = 1)
+@Database(entities = {Role.class,Account.class, Submission.class, Classes.class},version = 1)
 public abstract class CMSDatabase extends RoomDatabase {
     public abstract RoleDAO roleDAO();
     public abstract AccountDAO accountDAO();

@@ -9,6 +9,7 @@ import androidx.room.Update;
 import com.example.cmsmobile.entity.Classes;
 
 import java.util.List;
+import java.util.Optional;
 
 @Dao
 public interface ClassesDAO {
@@ -22,6 +23,9 @@ public interface ClassesDAO {
     @Delete
     void delete(Classes classes);
 
-    @Query("SELECT * FROM Classes WHERE id = :id")
+    @Query("SELECT * FROM Classes")
     List<Classes> getAll();
+
+    @Query("SELECT * FROM Classes WHERE class_id = :id")
+    Optional<Classes> findById(int id);
 }
