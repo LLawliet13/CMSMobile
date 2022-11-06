@@ -20,6 +20,35 @@
         <entry key="..\:/AndroidStudioProjects/CMSMobile/app/src/main/res/layout/activity_update_profile.xml" value="0.176" />
         <entry key="..\:/AndroidStudioProjects/CMSMobile/app/src/main/res/layout/role_item.xml" value="0.1328125" />
 <<<<<<< HEAD
+<<<<<<< HEAD
+        <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.131" />
+        <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/drawable/ic_launcher_background.xml" value="0.131" />
+        <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/layout/activity_add_announcement.xml" value="0.1" />
+        <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/layout/activity_add_class.xml" value="0.144" />
+        <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/layout/activity_add_course.xml" value="0.176" />
+        <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/layout/activity_add_course_feedback.xml" value="0.20260416666666667" />
+        <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/layout/activity_add_exam.xml" value="0.1" />
+        <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/layout/activity_add_exam_submission.xml" value="0.20164609053497942" />
+        <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/layout/activity_add_lecture.xml" value="0.2" />
+        <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/layout/activity_class_list.xml" value="0.1" />
+        <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/layout/activity_dashboard.xml" value="0.1" />
+        <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/layout/activity_edit_class.xml" value="0.1" />
+        <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/layout/activity_edit_exam.xml" value="0.1" />
+        <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/layout/activity_edit_exam_submission.xml" value="0.20260416666666667" />
+        <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/layout/activity_forget_password.xml" value="0.1640625" />
+        <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/layout/activity_grading.xml" value="0.20260416666666667" />
+        <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/layout/activity_list_lecture.xml" value="0.2" />
+        <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/layout/activity_main.xml" value="0.1640625" />
+        <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/layout/activity_recover_password.xml" value="0.1640625" />
+        <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/layout/activity_register.xml" value="0.1640625" />
+        <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/layout/activity_update_profile.xml" value="0.1640625" />
+        <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/layout/activity_view_class_detail.xml" value="0.176" />
+        <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/layout/activity_view_course_detail.xml" value="0.2" />
+        <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/layout/activity_view_exam.xml" value="0.176" />
+        <entry key="..\:/FPT-WorkSpace/PRM392/CMSMobile/app/src/main/res/layout/activity_view_exam_submission.xml" value="0.1" />
+=======
+>>>>>>> 20cfb0918465be323a3e44c040fd0127ef6aa4c9
 =======
         <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_add_announcement.xml" value="0.1539855072463768" />
         <entry key="..\:/Users/Asus/source/CMSMobile/app/src/main/res/layout/activity_add_class.xml" value="0.1539855072463768" />

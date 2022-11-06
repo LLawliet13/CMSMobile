@@ -7,7 +7,9 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.RawQuery;
+import androidx.room.Update;
 
+import com.example.cmsmobile.entity.Lecture;
 import com.example.cmsmobile.entity.Role;
 import com.example.cmsmobile.entity.Submission;
 
@@ -23,12 +25,12 @@ public interface SubmissionDAO {
     @Insert
     void insert(Submission... submissions);
 
-    @Query("Update Submission Set content = :content, grade = :grade Where submission_id = :submission_id")
-    void update(int submission_id, String content, Float grade, int account_id, int exam_id );
+    @Update
+    void update(Submission submission);
 
     @Delete
     void delete(Submission submission);
 
     @Query("Select * from Submission where submission_id = :id ")
-    List<Submission> findById(int id);
+    Optional<Submission> findById(int id);
 }

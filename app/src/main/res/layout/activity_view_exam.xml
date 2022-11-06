@@ -12,7 +12,134 @@
         android:orientation="vertical"
         tools:context=".activity.ViewExamActivity">
 
+<<<<<<< HEAD
+
+        <Button
+            android:layout_gravity="end|top"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="5dp"
+            android:text="Dashboard"
+            android:backgroundTint="@color/orange"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+    </GridLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/white"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="Course Name - Lecture Name"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="Class Name"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Home"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="  /  "/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Course"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="  /  "/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Course Name"/>
+    </GridLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/white"
+        android:layout_marginTop="10dp"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnAddExam"
+            android:layout_gravity="end|top"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="10dp"
+            android:text="+ Add exam"
+            android:backgroundTint="@color/green_highlight"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+    </GridLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1,2,3"
+        android:layout_margin="10dp">
+        <TableRow>
+            <TextView
+                android:text="Title"
+                android:textSize="20dp"
+                android:layout_column="1"
+                android:textColor="@color/black"/>
+            <TextView
+                android:text="Due date"
+                android:textSize="20dp"
+                android:layout_column="1"
+                android:textColor="@color/black"/>
+            <TextView
+                android:text="Action"
+                android:textSize="20dp"
+                android:layout_column="1"
+                android:textColor="@color/black"/>
+
+        </TableRow>
+
+        <androidx.recyclerview.widget.RecyclerView
+=======
         <GridLayout
+>>>>>>> 4cf7b48fa9e653fe706eff53360cc1a4036d1ab8
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 

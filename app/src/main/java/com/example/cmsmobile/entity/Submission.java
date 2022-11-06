@@ -14,11 +14,16 @@ public class Submission {
     private int account_id;
     private int exam_id;
 
+<<<<<<< HEAD
+    public Submission(String content, String files, Float grade, int account_id, int exam_id) {
+
+=======
 //    public Submission(int submission_id) {
 //        this.submission_id = submission_id;
 //    }
     public Submission(int submission_id, String content, String files, Float grade, int account_id, int exam_id) {
         this.submission_id = submission_id;
+>>>>>>> 4cf7b48fa9e653fe706eff53360cc1a4036d1ab8
         this.content = content;
         this.files = files;
         this.grade = grade;

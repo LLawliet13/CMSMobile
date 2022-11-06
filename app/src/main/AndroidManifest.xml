@@ -14,6 +14,16 @@
         android:theme="@style/Theme.CMSMobile"
         tools:targetApi="31">
         <activity
+            android:name=".activity.ViewCourseDetail"
+            android:exported="true" >
+
+        </activity>
+        <activity
+            android:name=".activity.AddCourseActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
             android:name=".activity.ClassListActivity"
             android:exported="false" />
         <activity
@@ -30,7 +40,9 @@
             android:exported="false" />
         <activity
             android:name=".activity.AddLectureActivity"
-            android:exported="false" />
+            android:exported="true" >
+
+        </activity>
         <activity
             android:name=".activity.GradingActivity"
             android:exported="false" />
@@ -39,10 +51,11 @@
             android:exported="false" />
         <activity
             android:name=".activity.AddExamSubmissionActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".activity.ViewExamSubmissionActivity"
-            android:exported="false">
+            android:exported="true" >
+
         </activity>
         <activity
             android:name=".activity.ViewCourseFeedbackActivity"
@@ -62,15 +75,23 @@
         <activity
             android:name=".activity.HomeActivity"
             android:exported="true">
+<<<<<<< HEAD
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+=======
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
 
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
+>>>>>>> 4cf7b48fa9e653fe706eff53360cc1a4036d1ab8
         </activity>
         <activity
             android:name=".activity.LoginActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".activity.EditClassActivity"
             android:exported="false" />
@@ -112,7 +133,10 @@
         <activity
             android:name=".activity.ViewExamActivity"
             android:exported="true">
-
+             <intent-filter>
+             <action android:name="android.intent.action.MAIN" />
+             <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
         </activity>
     </application>
 
