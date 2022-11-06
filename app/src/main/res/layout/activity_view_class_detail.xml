@@ -4,55 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/green_background"
     android:orientation="vertical"
-    tools:context=".activity.ViewClassDetailActivity"
-    android:background="@color/green_background">
+    tools:context=".activity.ViewClassDetailActivity">
 
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <Button
             android:layout_gravity="end|top"
             android:layout_marginTop="5dp"
             android:layout_marginRight="25dp"
             android:layout_marginBottom="5dp"
-            android:text="Dashboard"
             android:backgroundTint="@color/orange"
+            android:text="Dashboard"
             android:textColor="@color/black"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
     </GridLayout>
-
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="10dp"
-        android:background="@color/white"/>
-
+        android:background="@color/white" />
 
     <TextView
+        android:id="@+id/courseName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:text="Course Name - Lecture Name"
-        android:textSize="25dp"
-        android:id="@+id/courseName"
         android:textColor="@color/black"
-        android:textStyle="bold"/>
+        android:textSize="25dp"
+        android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/className"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:text="Class Name"
-        android:textSize="25dp"
-        android:id="@+id/className"
         android:textColor="@color/black"
-        android:textStyle="bold"/>
-
+        android:textSize="25dp"
+        android:textStyle="bold" />
 
     <GridLayout
         android:layout_width="match_parent"
@@ -63,49 +61,48 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="Home"/>
+            android:text="Home"
+            android:textColor="@color/black" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="  /  "/>
+            android:text="  /  "
+            android:textColor="@color/black" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="Course"/>
+            android:text="Course"
+            android:textColor="@color/black" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="  /  "/>
-
+            android:text="  /  "
+            android:textColor="@color/black" />
 
         <TextView
+            android:id="@+id/courseRedirect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
             android:text="Course Name"
-            android:id="@+id/courseRedirect"/>
+            android:textColor="@color/black" />
     </GridLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="10dp"
-        android:background="@color/white"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:background="@color/white" />
 
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
+        android:layout_gravity="center"
         android:columnCount="1"
         android:orientation="horizontal"
-        android:layout_gravity="center">
+        android:textAlignment="center">
 
         <Button
             android:layout_width="300dp"
@@ -120,23 +117,27 @@
         <Button
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
             android:layout_gravity="center"
             android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/white"
             android:text="Attachments"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black" />
     </GridLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="10dp"
-        android:background="@color/white"
-        android:layout_marginTop="10dp"/>
-    <GridView
-        android:id="@+id/gridViewClass"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollY="@dimen/cardview_default_radius"
-        android:layout_margin="10dp">
-    </GridView>
+        android:layout_marginTop="10dp"
+        android:background="@color/white" />
+
+
+    <Button
+        android:id="@+id/btn_listExam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="40dp"
+        android:text="View class's Exams"></Button>
+
+
 </LinearLayout>
