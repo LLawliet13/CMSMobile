@@ -79,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void registerUser(View view) {
         Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
-        intent.putExtra("role_id", 2);
+        intent.putExtra("role_id", 3);
         startActivity(intent);
 
     }

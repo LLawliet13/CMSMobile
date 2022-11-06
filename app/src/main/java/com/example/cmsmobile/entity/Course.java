@@ -32,6 +32,7 @@ public class Course {
         this.name = name;
     }
 
+<<<<<<< HEAD
     public int getCreator_id() {
         return creator_id;
     }
@@ -39,4 +40,6 @@ public class Course {
     public void setCreator_id(int creator_id) {
         this.creator_id = creator_id;
     }
+=======
+>>>>>>> 4cf7b48fa9e653fe706eff53360cc1a4036d1ab8
 }

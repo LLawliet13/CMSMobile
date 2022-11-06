@@ -14,14 +14,23 @@ import com.example.cmsmobile.dao.AnnouncementDAO;
 
 import com.example.cmsmobile.dao.ClassesDAO;
 import com.example.cmsmobile.dao.CourseDAO;
+<<<<<<< HEAD
 import com.example.cmsmobile.dao.LectureDAO;
+=======
+import com.example.cmsmobile.dao.ExamDAO;
+>>>>>>> 4cf7b48fa9e653fe706eff53360cc1a4036d1ab8
 import com.example.cmsmobile.dao.FeedbackDAO;
 import com.example.cmsmobile.dao.RoleDAO;
 import com.example.cmsmobile.dao.SubmissionDAO;
 
 
+<<<<<<< HEAD
 @Database(entities = {Role.class, Account.class, Submission.class, Classes.class,Course.class,Announcement.class,Account_Class.class, Lecture.class}, version = 1)
 
+=======
+@Database(entities = {Role.class, Account.class, Submission.class, Classes.class,Course.class,Announcement.class,Account_Class.class
+, Exam.class}, version = 1)
+>>>>>>> 4cf7b48fa9e653fe706eff53360cc1a4036d1ab8
 public abstract class CMSDatabase extends RoomDatabase {
     public abstract RoleDAO roleDAO();
 
@@ -30,6 +39,8 @@ public abstract class CMSDatabase extends RoomDatabase {
     public abstract ClassesDAO classesDAO();
     public abstract LectureDAO lectureDAO();
     public abstract SubmissionDAO submissionDAO();
+
+    public abstract ExamDAO examDAO();
 
     public abstract Account_ClassDAO account_classDAO();
 

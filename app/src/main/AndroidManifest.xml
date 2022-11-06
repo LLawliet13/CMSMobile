@@ -75,32 +75,31 @@
         <activity
             android:name=".activity.HomeActivity"
             android:exported="true">
+<<<<<<< HEAD
 
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
+=======
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+>>>>>>> 4cf7b48fa9e653fe706eff53360cc1a4036d1ab8
         </activity>
         <activity
             android:name=".activity.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.ViewExamActivity"
-            android:exported="false" />
-        <activity
             android:name=".activity.EditClassActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.AddClassActivity"
             android:exported="false" />
         <activity
             android:name=".activity.EditExamActivity"
             android:exported="false" />
         <activity
             android:name=".activity.AddExamActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.ViewClassDetailActivity"
             android:exported="false" />
         <activity
             android:name=".activity.UpdateProfileActivity"
@@ -114,8 +113,25 @@
         <activity
             android:name=".activity.RegisterActivity"
             android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".activity.MainActivity"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".activity.ViewClassDetailActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".activity.ViewExamActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".activity.AddClassActivity"-->
+<!--            android:exported="false" />-->
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".activity.ViewExamActivity"
             android:exported="true">
              <intent-filter>
              <action android:name="android.intent.action.MAIN" />

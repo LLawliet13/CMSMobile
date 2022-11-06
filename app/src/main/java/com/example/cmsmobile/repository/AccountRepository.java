@@ -44,10 +44,10 @@ public class AccountRepository {
     public void updateAccount(Account account){
         accountDAO.updateAccount(account);
     }
-    public Account Login(String username, String password){
+    public Account Login(String email, String password){
         List<Account> accountList = accountDAO.getAll();
         for (Account acc : accountList) {
-            if(acc.getUsername().equals(username) && acc.getPassword().equals(password)){
+            if(acc.getEmail().equals(email) && acc.getPassword().equals(password)){
                 return acc;
             }
             
