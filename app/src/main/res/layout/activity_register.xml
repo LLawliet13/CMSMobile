@@ -84,7 +84,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText_cfPassword"></Button>
     <Button
-        android:id="@+id/cancel_button"
+        android:id="@+id/register_back_button"
         android:layout_width="125dp"
         android:layout_height="62dp"
         android:layout_marginLeft="152dp"
