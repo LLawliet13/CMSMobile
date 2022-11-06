@@ -14,7 +14,7 @@ import com.example.cmsmobile.entity.Classes;
 
 import java.util.List;
 
-public class ClassesAdapter extends RecyclerView.Adapter<ClassesAdapter.ClassesViewHolder>{
+public class ClassesViewAdapter extends RecyclerView.Adapter<ClassesViewAdapter.ClassesViewHolder>{
 
     private List<Classes> listClasses;
     private Context context;
