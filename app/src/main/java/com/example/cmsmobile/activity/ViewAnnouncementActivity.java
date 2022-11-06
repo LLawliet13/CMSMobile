@@ -3,6 +3,7 @@ package com.example.cmsmobile.activity;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -27,30 +28,15 @@ AnnouncementRepository announcementRepository;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_announcement);
-        title = findViewById(R.id.titleTxt);
-        description = findViewById(R.id.descriptionTxt);
-        add= findViewById(R.id.addAnnouncementBtn);
+        add= findViewById(R.id.btnAddAnnouncement);
         add.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
-                add();
+                Intent intent = new Intent(getApplicationContext(),AddAnnouncementActivity.class);
+                startActivity(intent);
             }
         });
     }
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    private void add() {
-        try {
-            String name = title.getText().toString();
-            String content = description.getText().toString();
-           Announcement announcement = new Announcement();
-            announcement.setName(title.getText().toString());
-            announcement.setContent(description.getText().toString());
-            announcementRepository.addAnnouncement(announcement);
-            Toast.makeText(this,"Add announcement successfully",Toast.LENGTH_LONG).show();
-            finish();
-        } catch (Exception ex) {
-            Toast.makeText(this,ex.getMessage(),Toast.LENGTH_LONG).show();
-        }
-    }
+
 }

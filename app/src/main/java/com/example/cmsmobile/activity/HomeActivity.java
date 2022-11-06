@@ -21,6 +21,7 @@ public class HomeActivity extends AppCompatActivity {
     Button login_button;
     Button joinNow_button;
     Button logoutButton;
+    Button annBtn;
     RoleRepository roleRepository;
 
 
@@ -39,16 +40,20 @@ public class HomeActivity extends AppCompatActivity {
         login_button = findViewById(R.id.LoginBtnForHome);
         joinNow_button = findViewById(R.id.JoinNowButtonForHome);
         logoutButton = findViewById(R.id.logoutBtnHome);
+        annBtn = findViewById(R.id.viewAnnouncementBtn);
         //gan logoutButton
 
         if (getSharedPreferences("session", Context.MODE_PRIVATE).getInt("account_id", 0) > 0) {
             login_button.setVisibility(View.GONE);
             joinNow_button.setVisibility(View.GONE);
             logoutButton.setVisibility(View.VISIBLE);
+            annBtn.setVisibility(View.VISIBLE);
+
         } else {
             login_button.setVisibility(View.VISIBLE);
             joinNow_button.setVisibility(View.VISIBLE);
             logoutButton.setVisibility(View.GONE);
+            annBtn.setVisibility(View.GONE);
         }
         ;
 
@@ -72,6 +77,15 @@ public class HomeActivity extends AppCompatActivity {
 //        if (roleRepository.getAllRoles().size() == 0)
 //            roleRepository.setUpRoles();
         Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+        try {
+            startActivity(intent);
+        } catch (ActivityNotFoundException e) {
+            sendBroadcast(intent);
+        }
+
+    }
+    public void onAnnouncementView(View view) {
+        Intent intent = new Intent(HomeActivity.this, ViewAnnouncementActivity.class);
         try {
             startActivity(intent);
         } catch (ActivityNotFoundException e) {

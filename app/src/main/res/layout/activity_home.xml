@@ -93,7 +93,22 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
+        <Button
+            android:id="@+id/viewAnnouncementBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="162dp"
+            android:layout_marginEnd="152dp"
+            android:layout_marginBottom="277dp"
+            android:backgroundTint="@color/red_btn"
+            android:onClick="onAnnouncementView"
+            android:text="View Announcement"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
         <TextView
             android:layout_width="393dp"
             android:layout_height="125dp"

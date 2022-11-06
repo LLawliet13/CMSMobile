@@ -30,7 +30,7 @@ public class RegisterActivity extends AppCompatActivity {
         cfPassword = findViewById(R.id.editText_cfPassword);
         accountRepository = new AccountRepository(this);
         try {
-            role_id = getIntent().getExtras().getInt("role");
+            role_id = getIntent().getExtras().getInt("role_id");
         }catch (Exception ex){
             role_id = 0;
         }

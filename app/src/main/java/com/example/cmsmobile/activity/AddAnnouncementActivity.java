@@ -45,7 +45,7 @@ public class AddAnnouncementActivity extends AppCompatActivity {
             Toast.makeText(this,"Add announcement successfully",Toast.LENGTH_LONG).show();
             finish();
         } catch (Exception ex) {
-            Toast.makeText(this,ex.getMessage(),Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Cant add announcement",Toast.LENGTH_LONG).show();
         }
     }
     }
