@@ -9,11 +9,20 @@ public class Classes {
     private int class_id;
 
     private String name;
+    private String subject_code;
     private String description;
     private String attachments;
     private int course_id;
 
     public Classes() {
+    }
+
+    public Classes(String name, String subject_code, String description, String attachments, int course_id) {
+        this.name = name;
+        this.subject_code = subject_code;
+        this.description = description;
+        this.attachments = attachments;
+        this.course_id = course_id;
     }
 
     public int getClass_id() {
@@ -54,5 +63,13 @@ public class Classes {
 
     public void setCourse_id(int course_id) {
         this.course_id = course_id;
+    }
+
+    public String getSubject_code() {
+        return subject_code;
+    }
+
+    public void setSubject_code(String subject_code) {
+        this.subject_code = subject_code;
     }
 }
