@@ -39,13 +39,12 @@ public class AddCourseActivity extends AppCompatActivity {
                     Toast.makeText(AddCourseActivity.this, "Course Name already exist!", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                int user_id = getSharedPreferences("session", Context.MODE_PRIVATE).getInt("account_id", 0);
                 String user_role = getSharedPreferences("session", Context.MODE_PRIVATE).getString("role", "student");
-                if (user_role == "student"){
+                if (user_role.equals("student")){
                     Toast.makeText(AddCourseActivity.this, "Student account can not own a course!", Toast.LENGTH_SHORT).show();
 //                    return;
                 }
-                courseRepository.addCourse(new Course(course_name.getText().toString(), user_id));
+                courseRepository.addCourse(new Course(course_name.getText().toString()));
                 Intent intent = new Intent(AddCourseActivity.this, ViewCourseDetail.class);
                 intent.putExtra("course_name",course_name.getText().toString());
                 startActivity(intent);

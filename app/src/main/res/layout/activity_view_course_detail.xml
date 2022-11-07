@@ -106,16 +106,6 @@
             android:backgroundTint="@color/pinky"
             android:text="View Course Feedback"
             android:textColor="@color/black" />
-
-        <Button
-            android:id="@+id/btn_view_course_exam"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
-            android:layout_gravity="center"
-            android:layout_marginBottom="5dp"
-            android:text="View Exam"
-            android:textColor="@color/black"/>
         <Button
             android:id="@+id/btn_add_course_lecture"
             android:layout_width="300dp"
