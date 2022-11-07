@@ -47,7 +47,7 @@ public class ViewExamActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_exam);
 
-        examViewAdapter = new ExamViewAdapter();
+        examViewAdapter = new ExamViewAdapter(this);
         examRepository = new ExamRepository(this);
         classRepository = new ClassRepository(this);
         courseRepository = new CourseRepository(this);
@@ -72,6 +72,9 @@ public class ViewExamActivity extends AppCompatActivity {
             return;
         }
 
+        tvCourseName.setText(course.getName());
+        tvClassName.setText(classes.getName());
+        tvCourseRedirect.setText(course.getName());
         listExams = examRepository.getExamsByCourseId(course.getCourse_id());
         examViewAdapter.setData(listExams);
 
@@ -94,7 +97,7 @@ public class ViewExamActivity extends AppCompatActivity {
         tvCourseName = findViewById(R.id.tvCourseName);
         tvClassName = findViewById(R.id.tvClassName);
         tvCourseRedirect = findViewById(R.id.tvClassRedirect);
-        btnAdd = findViewById(R.id.btnAddAnnouncement);
-        rcvExamView = findViewById(R.id.AnnouncementView);
+        btnAdd = findViewById(R.id.btnAddExam);
+        rcvExamView = findViewById(R.id.rcvExamView);
     }
 }
