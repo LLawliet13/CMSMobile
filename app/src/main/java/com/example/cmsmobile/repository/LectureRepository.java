@@ -43,4 +43,8 @@ public class LectureRepository {
         return lectureDAO.getLectureByCourseId(id);
     }
 
+    public void Remove(Lecture lecture){
+        lectureDAO.deleteLecture(lecture);
+    }
+
 }
