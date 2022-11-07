@@ -12,6 +12,7 @@ import com.example.cmsmobile.entity.Account;
 import com.example.cmsmobile.entity.CMSDatabase;
 import com.example.cmsmobile.entity.Role;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AccountRepository {
@@ -28,9 +29,12 @@ public class AccountRepository {
     public void addAccount(Account account){
         accountDAO.insert(account);
     }
-//    public void execute(){
-//        accountDAO.insert(new Account(5, "Namprodz123@gmail.com", "namnguyen123", "namprodz123", "HN", "0982231418", 2, 6));
-//    }
+
+    public void execute(){
+        accountDAO.insert(new Account(6, "namprodz123@gmail.com", "namnguyen123", "namprodz123", "HN", "0982231418", 1, 6)
+                ,new Account(7, "nampro@gmail.com", "namnguyen123", "namprodz", "HN", "0982231418", 2, 5)
+                ,new Account(8, "nampro123@gmail.com", "namnguyen123", "namprodz222", "HN", "0982231418", 3, 4));
+    }
     @RequiresApi(api = Build.VERSION_CODES.N)
     public Account getAccountByEmail(String email) throws Exception {
         return accountDAO.findByEmail(email).orElseThrow(()->
@@ -38,7 +42,9 @@ public class AccountRepository {
         );
     }
     public List<Account> getAllAccounts(){
-        return accountDAO.getAll();
+        List<Account> accountList = new ArrayList<>();
+         accountList.addAll(accountDAO.getAll());
+        return accountList;
     }
 
     public void updateAccount(Account account){
@@ -53,5 +59,9 @@ public class AccountRepository {
             
         }
         return null;
+    }
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public Account getAccountById(int account_id){
+        return accountDAO.getAll().stream().filter(a -> a.getAccount_id() == account_id).findFirst().get();
     }
 }

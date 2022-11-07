@@ -1,6 +1,7 @@
 package com.example.cmsmobile.entity;
 
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity
@@ -9,18 +10,19 @@ public class Course {
     private int course_id;
 
     private String name;
-    private Integer class_id;
-    public Course(){
+
+
+
+    public Course() {
 
     }
-
-    public Integer getClass_id() {
-        return class_id;
+    @Ignore
+    public Course(String name) {
+        this.name = name;
     }
 
-    public void setClass_id(Integer class_id) {
-        this.class_id = class_id;
-    }
+
+
 
     public int getCourse_id() {
         return course_id;

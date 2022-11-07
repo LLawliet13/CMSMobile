@@ -30,10 +30,7 @@
             android:text="Account"
             android:backgroundTint="@color/home_btn"
             android:textSize="10dp" />
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/icon_list"/>
+
     </RelativeLayout>
 
     <RelativeLayout

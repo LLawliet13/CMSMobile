@@ -8,6 +8,8 @@ import com.example.cmsmobile.entity.Account;
 import com.example.cmsmobile.entity.Announcement;
 import com.example.cmsmobile.entity.CMSDatabase;
 
+import java.util.List;
+
 public class AnnouncementRepository {
     private AnnouncementDAO announcementDAO;
 
@@ -15,8 +17,8 @@ public class AnnouncementRepository {
         announcementDAO = CMSDatabase.getInstance(context).announcementDAO();
     }
 
-    public AnnouncementDAO getAnnouncementDAO() {
-        return announcementDAO;
+    public List<Announcement> getAnnouncementDAO() {
+        return announcementDAO.getAllAnnouncement();
     }
     public void addAnnouncement(Announcement announcement){
         announcementDAO.insert(announcement);

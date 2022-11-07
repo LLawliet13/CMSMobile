@@ -1,8 +1,10 @@
 package com.example.cmsmobile.activity;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -41,10 +43,17 @@ public class AddClassActivity extends AppCompatActivity {
         });
 
         btnSave.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
                 int course_id = getIntent().getExtras().getInt("course_id");
-                Course course = courseRepository.getCourseById(course_id);
+
+                Course course = null;
+                try {
+                    course = courseRepository.getCourseById(course_id);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 if(course==null){
                     return;
                 }

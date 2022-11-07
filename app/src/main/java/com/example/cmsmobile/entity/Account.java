@@ -1,6 +1,7 @@
 package com.example.cmsmobile.entity;
 
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity
@@ -21,6 +22,7 @@ public class Account {
 
 
 
+    @Ignore
     public Account(String email, String password, String username, String address, String phone, int role_id) {
         this.email = email;
         this.password = password;

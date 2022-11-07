@@ -47,7 +47,7 @@
             android:exported="true" />
         <activity
             android:name=".activity.ViewExamSubmissionActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".activity.ViewCourseFeedbackActivity"
             android:exported="false" />
@@ -71,6 +71,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".activity.LoginActivity"
@@ -99,11 +100,20 @@
         <activity
             android:name=".activity.ClassListActivity"
             android:exported="false">
+            <
+            <
+            <
+            <
+            <
+            <
+            < HEAD
 
+            =======
+            >>>>>>> 1b08a3e3582039520c198e1e5f92478c7cf17ce7
         </activity>
-        <activity
-            android:name=".activity.ViewClassDetailActivity"
-            android:exported="false" />
+        <!--        <activity-->
+        <!--            android:name=".activity.ViewClassDetailActivity"-->
+        <!--            android:exported="false" />-->
         <activity
             android:name=".activity.ViewExamActivity"
             android:exported="false" />

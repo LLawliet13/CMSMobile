@@ -1,10 +1,12 @@
 package com.example.cmsmobile.activity;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -33,6 +35,7 @@ public class ViewClassDetailActivity extends AppCompatActivity {
     private ClassRepository classRepository;
     private CourseRepository courseRepository;
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,17 +44,29 @@ public class ViewClassDetailActivity extends AppCompatActivity {
         classRepository = new ClassRepository(this);
         courseRepository = new CourseRepository(this);
 
-        int class_id = getIntent().getExtras().getInt("class_id");
-        Classes classes = classRepository.getClassById(class_id);
+        initUI();
+
+//        int class_id = getIntent().getExtras().getInt("class_id");
+        int class_id = 1;
+        Classes classes = null;
+        try {
+            classes = classRepository.getClassById(class_id);
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
         if(classes==null){
             return;
         }
-        Course course = courseRepository.getCourseByClassId(class_id);
+
+        Course course = null;
+        try {
+            course = courseRepository.getCourseById(classes.getCourse_id());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         if(course==null){
             return;
         }
-
-        initUI();
 
         tvCourseName.setText(course.getName());
         tvClassName.setText(classes.getName());
