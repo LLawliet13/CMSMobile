@@ -28,9 +28,9 @@ public class AccountRepository {
     public void addAccount(Account account){
         accountDAO.insert(account);
     }
-    public void execute(){
-        accountDAO.insert(new Account(5, "Namprodz123@gmail.com", "namnguyen123", "namprodz123", "HN", "0982231418", 2, 6));
-    }
+//    public void execute(){
+//        accountDAO.insert(new Account(5, "Namprodz123@gmail.com", "namnguyen123", "namprodz123", "HN", "0982231418", 2, 6));
+//    }
     @RequiresApi(api = Build.VERSION_CODES.N)
     public Account getAccountByEmail(String email) throws Exception {
         return accountDAO.findByEmail(email).orElseThrow(()->

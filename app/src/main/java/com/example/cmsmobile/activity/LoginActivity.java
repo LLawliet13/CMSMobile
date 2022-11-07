@@ -14,8 +14,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.cmsmobile.R;
-import com.example.cmsmobile.dao.AccountDAO;
-import com.example.cmsmobile.dao.AccountRoomDatabase;
 import com.example.cmsmobile.entity.Account;
 import com.example.cmsmobile.entity.Role;
 import com.example.cmsmobile.repository.AccountRepository;
@@ -25,7 +23,7 @@ import java.util.Optional;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText editTextUserName, editTextPassword;
-    Button LoginBtn, back;
+    Button LoginBtn, back,forgetBtn;
     private RoleRepository roleRepository;
 
     @Override
@@ -35,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
         roleRepository = new RoleRepository(this);
         back = findViewById(R.id.backBtn);
         LoginBtn = findViewById(R.id.LoginBtn);
+        forgetBtn = findViewById(R.id.forgetBtn);
         editTextUserName = findViewById(R.id.editTextUserName);
         editTextPassword = findViewById(R.id.editTextPassword);
         LoginBtn.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +72,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+        forgetBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this,ForgetPasswordActivity.class);
+                startActivity(intent);
             }
         });
     }

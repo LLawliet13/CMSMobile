@@ -14,30 +14,12 @@ public class Account {
     private String address;
     private String phone;
     private int role_id;// luc add account phai tu cung cap truong nay
-    private int token_change_password;
 
     public Account() {
 
     }
 
-    public int getToken_change_password() {
-        return token_change_password;
-    }
 
-    public void setToken_change_password(int token_change_password) {
-        this.token_change_password = token_change_password;
-    }
-
-    public Account(int account_id, String email, String password, String username, String address, String phone, int role_id, int token_change_password) {
-        this.account_id = account_id;
-        this.email = email;
-        this.password = password;
-        this.username = username;
-        this.address = address;
-        this.phone = phone;
-        this.role_id = role_id;
-        this.token_change_password = token_change_password;
-    }
 
     public Account(String email, String password, String username, String address, String phone, int role_id) {
         this.email = email;
