@@ -58,8 +58,8 @@ public class ForgetPasswordActivity extends AppCompatActivity {
     String forgetPasswordEmail;
     String TokenSentToEmail;
     final String username = "dungtran12345567788@gmail.com";
-    final String password = "jtjxtpitgomydxsq";
-    //jtjxtpitgomydxsq \\ real abcede123
+    final String password = "aksavouejqwghduq";
+    //aksavouejqwghduq \\ real abcede123
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public boolean checkIfExisted(String account_name){

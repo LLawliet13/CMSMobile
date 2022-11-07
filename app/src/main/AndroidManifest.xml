@@ -100,16 +100,7 @@
         <activity
             android:name=".activity.ClassListActivity"
             android:exported="false">
-            <
-            <
-            <
-            <
-            <
-            <
-            < HEAD
 
-            =======
-            >>>>>>> 1b08a3e3582039520c198e1e5f92478c7cf17ce7
         </activity>
         <!--        <activity-->
         <!--            android:name=".activity.ViewClassDetailActivity"-->

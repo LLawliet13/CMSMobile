@@ -69,8 +69,6 @@ public class HomeActivity extends AppCompatActivity {
             }
         }
         AccountRepository accountRepository = new AccountRepository(this);
-        if(accountRepository.getAllAccounts().size() ==0 )
-        accountRepository.execute();
         Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
         accountName = findViewById(R.id.accountName);
         String name = getIntent().getStringExtra("name");

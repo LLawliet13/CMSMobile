@@ -71,7 +71,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
     public void updateProfile(Account account) {
         try {
             AccountValidation.validate(account);
-            accRepo.updateAccount(new Account());
+            accRepo.updateAccount(account);
             Toast.makeText(UpdateProfileActivity.this, "Update Successfully!", Toast.LENGTH_LONG).show();
         } catch (Exception e) {
             Toast.makeText(UpdateProfileActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
