@@ -54,7 +54,6 @@ public class ExamViewAdapter extends RecyclerView.Adapter<ExamViewAdapter.ExamVi
         }
         holder.tvTitle.setText(exam.getName());
         holder.tvDueDate.setText(exam.getEnd_date());
-
         holder.tvTitle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

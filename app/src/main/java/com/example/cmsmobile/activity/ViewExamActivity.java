@@ -75,7 +75,6 @@ public class ViewExamActivity extends AppCompatActivity {
         tvCourseName.setText(course.getName());
         tvClassName.setText(classes.getName());
         tvCourseRedirect.setText(course.getName());
-
         listExams = examRepository.getExamsByCourseId(course.getCourse_id());
         examViewAdapter.setData(listExams);
 
