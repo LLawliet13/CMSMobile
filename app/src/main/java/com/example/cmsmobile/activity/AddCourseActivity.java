@@ -27,7 +27,7 @@ public class AddCourseActivity extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                courseRepository.addCourse(new Course(name.getText().toString(), 1));
+                courseRepository.addCourse(new Course(name.getText().toString()));
                 Intent intent = new Intent(AddCourseActivity.this, ViewCourseDetail.class);
                 intent.putExtra("CourseName",name.getText().toString());
                 intent.putExtra("course_id",1);

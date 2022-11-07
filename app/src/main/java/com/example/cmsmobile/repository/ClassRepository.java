@@ -51,4 +51,7 @@ public class ClassRepository {
     public List<Classes> getAllClassesList() {
         return classesDAO.getAll();
     }
+    public Classes getClassByName(String className){
+        return classesDAO.findClassByName(className);
+    }
 }

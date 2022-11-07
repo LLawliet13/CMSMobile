@@ -47,6 +47,7 @@ public class AddClassActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int course_id = getIntent().getExtras().getInt("course_id");
+
                 Course course = null;
                 try {
                     course = courseRepository.getCourseById(course_id);

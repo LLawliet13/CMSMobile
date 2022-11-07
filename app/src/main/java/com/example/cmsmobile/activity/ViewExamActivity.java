@@ -15,11 +15,10 @@ import android.widget.Toast;
 
 import com.example.cmsmobile.R;
 import com.example.cmsmobile.adapter.ExamViewAdapter;
-import com.example.cmsmobile.entity.Account;
+
 import com.example.cmsmobile.entity.Classes;
 import com.example.cmsmobile.entity.Course;
 import com.example.cmsmobile.entity.Exam;
-import com.example.cmsmobile.repository.AccountRepository;
 import com.example.cmsmobile.repository.ClassRepository;
 import com.example.cmsmobile.repository.CourseRepository;
 import com.example.cmsmobile.repository.ExamRepository;
@@ -37,7 +36,6 @@ public class ViewExamActivity extends AppCompatActivity {
     private ExamRepository examRepository;
     private CourseRepository courseRepository;
     private ClassRepository classRepository;
-    private AccountRepository accountRepository;
     private List<Exam> listExams;
 
     private Course course = null;
@@ -53,7 +51,6 @@ public class ViewExamActivity extends AppCompatActivity {
         examRepository = new ExamRepository(this);
         classRepository = new ClassRepository(this);
         courseRepository = new CourseRepository(this);
-        accountRepository = new AccountRepository(this);
 
         initUI();
 
@@ -74,16 +71,6 @@ public class ViewExamActivity extends AppCompatActivity {
         if(course==null){
             return;
         }
-
-        Account account = null;
-        try {
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-
-        tvCourseName.setText(course.getName());
-        tvClassName.setText(classes.getName());
-        tvCourseRedirect.setText(course.getName());
 
         listExams = examRepository.getExamsByCourseId(course.getCourse_id());
         examViewAdapter.setData(listExams);

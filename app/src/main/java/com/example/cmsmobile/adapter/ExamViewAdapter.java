@@ -44,14 +44,8 @@ public class ExamViewAdapter extends RecyclerView.Adapter<ExamViewAdapter.ExamVi
         if (exam == null) {
             return;
         }
-        String getEndDate = null;
-        if(exam.getEnd_date().isEmpty()){
-            getEndDate = "Unlimited";
-        }else{
-            getEndDate = exam.getEnd_date();
-        }
         holder.tvTitle.setText(exam.getName());
-        holder.tvDueDate.setText(getEndDate);
+        holder.tvDueDate.setText(exam.getEnd_date());
         holder.btnEditExam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

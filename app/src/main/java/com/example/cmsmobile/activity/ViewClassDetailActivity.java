@@ -35,6 +35,10 @@ public class ViewClassDetailActivity extends AppCompatActivity {
     private ClassRepository classRepository;
     private CourseRepository courseRepository;
 
+    private Classes classes = null;
+    private Course course = null;
+
+
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +51,9 @@ public class ViewClassDetailActivity extends AppCompatActivity {
         initUI();
 
 //        int class_id = getIntent().getExtras().getInt("class_id");
+
+
         int class_id = 1;
-        Classes classes = null;
         try {
             classes = classRepository.getClassById(class_id);
         } catch (Throwable e) {
@@ -57,7 +62,7 @@ public class ViewClassDetailActivity extends AppCompatActivity {
         if(classes==null){
             return;
         }
-        Course course = null;
+
         try {
             course = courseRepository.getCourseById(classes.getCourse_id());
         } catch (Exception e) {
@@ -67,6 +72,9 @@ public class ViewClassDetailActivity extends AppCompatActivity {
             return;
         }
 
+        Toast.makeText(this, "Course Id "+classes.getCourse_id(), Toast.LENGTH_SHORT).show();
+
+
         tvCourseName.setText(course.getName());
         tvClassName.setText(classes.getName());
         tvCourseRedirect.setText(course.getName());
@@ -75,7 +83,7 @@ public class ViewClassDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ViewClassDetailActivity.this, ViewExamActivity.class);
-                intent.putExtra("class_id", class_id);
+                intent.putExtra("class_id", classes.getClass_id());
                 startActivity(intent);
             }
         });
