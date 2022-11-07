@@ -51,12 +51,4 @@ public class CourseRepository {
         }
         return courseList1;
     }
-
-    public Course getCourseById(int id){
-        return courseDAO.findCourseById(id);
-    }
-
-    public Course getCourseByClassId(int class_id){
-        return courseDAO.findCourseByClassId(class_id);
-    }
 }
