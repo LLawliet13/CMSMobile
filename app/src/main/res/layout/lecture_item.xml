@@ -2,9 +2,36 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <TextView
         android:id="@+id/et_lecture_name_item"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        ></TextView>
+        android:layout_width="220dp"
+        android:layout_height="36dp"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingTop="20dp"
+        android:text="test hgfgdfgdfgdfgdfgdfgdfgdfgdfgdfgdfvdfdf dfvdfvdfvsdvsi"></TextView>
+
+    <Button
+        android:id="@+id/btn_edit_lecture_item"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_margin="10dp"
+        android:layout_marginTop="0dp"
+        android:backgroundTint="@color/orange"
+        android:text="Edit"
+        android:textSize="6dp" />
+
+    <Button
+        android:id="@+id/btn_remove_lecture_item"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:backgroundTint="@color/red_btn"
+        android:layout_margin="10dp"
+        android:layout_marginTop="0dp"
+        android:text="Remove"
+        android:textSize="6dp" />
+
 </LinearLayout>
