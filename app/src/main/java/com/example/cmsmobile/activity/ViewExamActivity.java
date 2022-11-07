@@ -46,11 +46,12 @@ public class ViewExamActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_exam);
 
-        initUI();
         examViewAdapter = new ExamViewAdapter();
         examRepository = new ExamRepository(this);
         classRepository = new ClassRepository(this);
         courseRepository = new CourseRepository(this);
+
+        initUI();
 
         int class_id = getIntent().getExtras().getInt("class_id");
 
@@ -70,10 +71,10 @@ public class ViewExamActivity extends AppCompatActivity {
             return;
         }
 
-        listExams = new ArrayList<>();
+        listExams = examRepository.getExamsByCourseId(course.getCourse_id());
         examViewAdapter.setData(listExams);
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(this);
         rcvExamView.setLayoutManager(linearLayoutManager);
         rcvExamView.setAdapter(examViewAdapter);
 
