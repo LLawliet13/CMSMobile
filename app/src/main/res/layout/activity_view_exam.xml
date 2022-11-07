@@ -116,20 +116,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:stretchColumns="1,2,3">
+        android:stretchColumns="0,1">
 
         <TableRow>
 
             <TextView
-                android:layout_column="1"
+                android:layout_column="0"
                 android:text="Title"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="20dp" />
-
-            <TextView
-                android:layout_column="1"
-                android:text="Due date"
+                android:layout_width="0dp"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
