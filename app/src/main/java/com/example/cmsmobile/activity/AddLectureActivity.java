@@ -30,7 +30,14 @@ public class AddLectureActivity extends AppCompatActivity {
         EditText name = findViewById(R.id.et_lecture_name);
         EditText date = findViewById(R.id.et_lecture_date);
         EditText content = findViewById(R.id.et_lecture_content);
+        TextView title = findViewById(R.id.tv_course_title);
         LectureRepository lectureRepository = new LectureRepository(this);
+        CourseRepository courseRepository = new CourseRepository(this);
+
+        Bundle extras = getIntent().getExtras();
+        String course_name = extras.getString("course_name");
+        Course course = courseRepository.getCourseByName(course_name);
+        title.setText("General Course: " + course_name);
 
         save_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +51,7 @@ public class AddLectureActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AddLectureActivity.this, ViewCourseDetail.class);
+                intent.putExtra("course_name",course_name);
                 startActivity(intent);
             }
         });

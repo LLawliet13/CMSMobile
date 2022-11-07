@@ -10,13 +10,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.cmsmobile.R;
+import com.example.cmsmobile.adapter.LectureAdapter;
+import com.example.cmsmobile.adapter.RoleAdapter;
 import com.example.cmsmobile.entity.Account;
 import com.example.cmsmobile.entity.Course;
+import com.example.cmsmobile.entity.Lecture;
+import com.example.cmsmobile.entity.Role;
 import com.example.cmsmobile.repository.AccountRepository;
 import com.example.cmsmobile.repository.CourseRepository;
+import com.example.cmsmobile.repository.LectureRepository;
 
 public class ViewCourseDetail extends AppCompatActivity {
 
@@ -27,6 +33,7 @@ public class ViewCourseDetail extends AppCompatActivity {
     Course course;
     CourseRepository courseRepository;
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +52,12 @@ public class ViewCourseDetail extends AppCompatActivity {
         GridLayout link = findViewById(R.id.course_link);
         link.setVisibility(View.GONE);
 
+        LectureRepository lectureRepository = new LectureRepository(this);
+        ListView LectureListView = (ListView) findViewById(R.id.lecture_list);
+        LectureAdapter adapter = new LectureAdapter(this,
+                lectureRepository.getLecturesByCourseId(course.getCourse_id()).stream().toArray(Lecture[]::new));
+        LectureListView.setAdapter(adapter);
+
         view_feedback_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,6 +70,7 @@ public class ViewCourseDetail extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ViewCourseDetail.this, AddLectureActivity.class);
+                intent.putExtra("course_name",course.getName());
                 startActivity(intent);
             }
         });
