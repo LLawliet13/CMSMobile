@@ -71,9 +71,5 @@ public class ViewClassDetailActivity extends AppCompatActivity {
         tvCourseName = findViewById(R.id.courseName);
         tvClassName = findViewById(R.id.className);
         tvCourseRedirect = findViewById(R.id.courseRedirect);
-<<<<<<< HEAD
-=======
-        btn_ViewClass = findViewById(R.id.btn_listExam);
->>>>>>> 3a444d92aac46f29abf5561e23191982cb3af0ce
     }
 }
