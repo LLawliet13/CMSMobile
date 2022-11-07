@@ -63,7 +63,6 @@ public class ExamViewAdapter extends RecyclerView.Adapter<ExamViewAdapter.ExamVi
         });
 
         holder.btnEditExam.setOnClickListener(new View.OnClickListener() {
-            private Activity ViewExamActivity;
 
             @Override
             public void onClick(View v) {

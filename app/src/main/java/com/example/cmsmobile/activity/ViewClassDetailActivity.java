@@ -50,8 +50,8 @@ public class ViewClassDetailActivity extends AppCompatActivity {
 
         initUI();
 
+//        Bỏ comment của class_id bên dưới để chạy vào class trong course
 //        int class_id = getIntent().getExtras().getInt("class_id");
-
 
         int class_id = 1;
         try {
@@ -71,9 +71,6 @@ public class ViewClassDetailActivity extends AppCompatActivity {
         if(course==null){
             return;
         }
-
-        Toast.makeText(this, "Course Id "+classes.getCourse_id(), Toast.LENGTH_SHORT).show();
-
 
         tvCourseName.setText(course.getName());
         tvClassName.setText(classes.getName());
