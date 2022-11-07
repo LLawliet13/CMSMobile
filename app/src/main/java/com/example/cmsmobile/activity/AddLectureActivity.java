@@ -2,6 +2,7 @@ package com.example.cmsmobile.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.cmsmobile.R;
 import com.example.cmsmobile.entity.Course;
@@ -36,14 +38,19 @@ public class AddLectureActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         String course_name = extras.getString("course_name");
-        Course course = courseRepository.getCourseByName(course_name);
         title.setText("General Course: " + course_name);
 
         save_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                lectureRepository.addLecture(new Lecture(name.getText().toString(),content.getText().toString(), 1, date.getText().toString()));
+                if (name.getText().toString().isEmpty()) {
+                    Toast.makeText(AddLectureActivity.this, "Lecture Name can't be empty!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                Course course = courseRepository.getCourseByName(course_name);
+                lectureRepository.addLecture(new Lecture(name.getText().toString(),content.getText().toString(), course.getCourse_id(), date.getText().toString()));
                 Intent intent = new Intent(AddLectureActivity.this, ViewCourseDetail.class);
+                intent.putExtra("course_name",course_name);
                 startActivity(intent);
             }
         });

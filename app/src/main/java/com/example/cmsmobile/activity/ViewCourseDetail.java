@@ -3,6 +3,7 @@ package com.example.cmsmobile.activity;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.widget.EditText;
 import android.widget.GridLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.cmsmobile.R;
 import com.example.cmsmobile.adapter.LectureAdapter;
@@ -57,6 +59,16 @@ public class ViewCourseDetail extends AppCompatActivity {
         LectureAdapter adapter = new LectureAdapter(this,
                 lectureRepository.getLecturesByCourseId(course.getCourse_id()).stream().toArray(Lecture[]::new));
         LectureListView.setAdapter(adapter);
+
+        String user_role = getSharedPreferences("session", Context.MODE_PRIVATE).getString("role", "student");
+//        if (user_role.equals("student")){
+//            view_feedback_btn.setVisibility(View.GONE);
+//            add_lecture_btn.setVisibility(View.GONE);
+//            GridLayout teacher = findViewById(R.id.gridLayout_teacher);
+//            TextView sep = findViewById(R.id.sep_white);
+//            teacher.setVisibility(View.GONE);
+//            sep.setVisibility(View.GONE);
+//        }
 
         view_feedback_btn.setOnClickListener(new View.OnClickListener() {
             @Override
