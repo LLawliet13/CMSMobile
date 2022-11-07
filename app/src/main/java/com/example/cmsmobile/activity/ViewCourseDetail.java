@@ -48,7 +48,7 @@ public class ViewCourseDetail extends AppCompatActivity {
         courseRepository = new CourseRepository(this);
         extras = getIntent().getExtras();
         course_name = extras.getString("course_name");
-        course = courseRepository.getCourseByName(course_name);
+        course = courseRepository.getCourseByName1(course_name);
 
         title.setText("General Course: " + course_name);
         GridLayout link = findViewById(R.id.course_link);

@@ -47,7 +47,7 @@ public class AddLectureActivity extends AppCompatActivity {
                     Toast.makeText(AddLectureActivity.this, "Lecture Name can't be empty!", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                Course course = courseRepository.getCourseByName(course_name);
+                Course course = courseRepository.getCourseByName1(course_name);
                 lectureRepository.addLecture(new Lecture(name.getText().toString(),content.getText().toString(), course.getCourse_id(), date.getText().toString()));
                 Intent intent = new Intent(AddLectureActivity.this, ViewCourseDetail.class);
                 intent.putExtra("course_name",course_name);

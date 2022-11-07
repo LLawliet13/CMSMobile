@@ -34,7 +34,7 @@ public class AddCourseActivity extends AppCompatActivity {
                     Toast.makeText(AddCourseActivity.this, "Course Name can't be empty!", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                Course course = courseRepository.getCourseByName(course_name.getText().toString());
+                Course course = courseRepository.getCourseByName1(course_name.getText().toString());
                 if (course != null){
                     Toast.makeText(AddCourseActivity.this, "Course Name already exist!", Toast.LENGTH_SHORT).show();
                     return;

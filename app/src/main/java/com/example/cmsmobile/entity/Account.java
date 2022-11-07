@@ -1,6 +1,7 @@
 package com.example.cmsmobile.entity;
 
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity
@@ -27,7 +28,7 @@ public class Account {
     public void setToken_change_password(int token_change_password) {
         this.token_change_password = token_change_password;
     }
-
+@Ignore
     public Account(int account_id, String email, String password, String username, String address, String phone, int role_id, int token_change_password) {
         this.account_id = account_id;
         this.email = email;
@@ -38,7 +39,7 @@ public class Account {
         this.role_id = role_id;
         this.token_change_password = token_change_password;
     }
-
+    @Ignore
     public Account(String email, String password, String username, String address, String phone, int role_id) {
         this.email = email;
         this.password = password;

@@ -1,6 +1,9 @@
 package com.example.cmsmobile.repository;
 
 import android.content.Context;
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
 
 import com.example.cmsmobile.dao.ClassesDAO;
 import com.example.cmsmobile.entity.CMSDatabase;
@@ -26,8 +29,11 @@ public class ClassRepository {
         classesDAO.insert(classes);
     }
 
-    public Classes getClassById(int id) {
-        return classesDAO.findById(id);
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public Classes getClassById(int id) throws Throwable {
+        return classesDAO.findById(id).orElseThrow(()->
+                new Exception("No Class Found")
+        );
     }
 
     public List<Classes> getAllClasses() {
@@ -44,5 +50,8 @@ public class ClassRepository {
 
     public List<Classes> getAllClassesList() {
         return classesDAO.getAll();
+    }
+    public Classes getClassByName(String className){
+        return classesDAO.findClassByName(className);
     }
 }

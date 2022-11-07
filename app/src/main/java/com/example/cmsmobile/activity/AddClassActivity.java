@@ -1,8 +1,10 @@
 package com.example.cmsmobile.activity;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,7 +13,9 @@ import android.widget.Toast;
 
 import com.example.cmsmobile.R;
 import com.example.cmsmobile.entity.Classes;
+import com.example.cmsmobile.entity.Course;
 import com.example.cmsmobile.repository.ClassRepository;
+import com.example.cmsmobile.repository.CourseRepository;
 
 public class AddClassActivity extends AppCompatActivity {
 
@@ -19,6 +23,7 @@ public class AddClassActivity extends AppCompatActivity {
     private Button btnSave, btnCancel;
 
     private ClassRepository classRepository;
+    private CourseRepository courseRepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +32,7 @@ public class AddClassActivity extends AppCompatActivity {
 
         initUI();
         classRepository = new ClassRepository(this);
+        courseRepository = new CourseRepository(this);
 
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,8 +43,21 @@ public class AddClassActivity extends AppCompatActivity {
         });
 
         btnSave.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
+                int course_id = getIntent().getExtras().getInt("course_id");
+
+                Course course = null;
+                try {
+                    course = courseRepository.getCourseById(course_id);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                if(course==null){
+                    return;
+                }
+
                 String className = etClassName.getText().toString();
                 String subjectCode = etSubjectCode.getText().toString();
                 String teacher = etTeacher.getText().toString();
@@ -53,8 +72,10 @@ public class AddClassActivity extends AppCompatActivity {
                     return;
                 }
                 classRepository.addClasses(classes);
-                Toast.makeText(AddClassActivity.this, "Add class successfully!", Toast.LENGTH_SHORT).show();
 
+                Intent intent = new Intent(AddClassActivity.this, ClassListActivity.class);
+                intent.putExtra("course_id", course_id);
+                startActivity(intent);
             }
         });
     }

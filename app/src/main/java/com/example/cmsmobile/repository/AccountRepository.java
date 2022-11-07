@@ -12,6 +12,7 @@ import com.example.cmsmobile.entity.Account;
 import com.example.cmsmobile.entity.CMSDatabase;
 import com.example.cmsmobile.entity.Role;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AccountRepository {
@@ -25,29 +26,37 @@ public class AccountRepository {
         return accountDAO;
     }
 
-    public void addAccount(Account account){
+    public void addAccount(Account account) {
         accountDAO.insert(account);
     }
-    public void execute(){
-        accountDAO.insert(new Account(5, "Namprodz123@gmail.com", "namnguyen123", "namprodz123", "HN", "0982231418", 2, 6));
-    }
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public Account getAccountByEmail(String email) throws Exception {
-        return accountDAO.findByEmail(email).orElseThrow(()->
-             new Exception("No Account Found")
-        );
-    }
-    public List<Account> getAllAccounts(){
-        return accountDAO.getAll();
+
+    public void execute() {
+        accountDAO.insert(new Account(6, "namprodz123@gmail.com", "namnguyen123", "namprodz123", "HN", "0982231418", 1, 6)
+                , new Account(7, "nampro@gmail.com", "namnguyen123", "namprodz", "HN", "0982231418", 2, 5)
+                , new Account(8, "nampro123@gmail.com", "namnguyen123", "namprodz222", "HN", "0982231418", 3, 4));
     }
 
-    public void updateAccount(Account account){
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public Account getAccountByEmail(String email) throws Exception {
+        return accountDAO.findByEmail(email).orElseThrow(() ->
+                new Exception("No Account Found")
+        );
+    }
+
+    public List<Account> getAllAccounts() {
+        List<Account> accountList = new ArrayList<>();
+        accountList.addAll(accountDAO.getAll());
+        return accountList;
+    }
+
+    public void updateAccount(Account account) {
         accountDAO.updateAccount(account);
     }
-    public Account Login(String email, String password){
+
+    public Account Login(String email, String password) {
         List<Account> accountList = accountDAO.getAll();
         for (Account acc : accountList) {
-            if(acc.getEmail().equals(email) && acc.getPassword().equals(password)){
+            if (acc.getEmail().equals(email) && acc.getPassword().equals(password)) {
                 return acc;
             }
         }

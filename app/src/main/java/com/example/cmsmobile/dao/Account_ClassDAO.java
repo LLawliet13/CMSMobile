@@ -1,6 +1,7 @@
 package com.example.cmsmobile.dao;
 
 import androidx.room.Dao;
+import androidx.room.Insert;
 import androidx.room.Query;
 
 import com.example.cmsmobile.entity.Account_Class;
@@ -17,5 +18,8 @@ public interface Account_ClassDAO {
 
     @Query("Select * from Account_Class")
     List<Account_Class> getAll();
+
+    @Insert
+    void addAccount_Class(Account_Class account_class);
 
 }

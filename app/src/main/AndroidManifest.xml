@@ -13,10 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CMSMobile"
         tools:targetApi="31">
+
         <activity
             android:name=".activity.ViewCourseDetail"
             android:exported="true" >
-
         </activity>
         <activity
             android:name=".activity.AddCourseActivity"
@@ -29,6 +29,9 @@
         <activity
             android:name=".activity.ClassListActivity"
             android:exported="false" />
+        <!--        <activity-->
+        <!--            android:name=".activity.ClassListActivity"-->
+        <!--            android:exported="false" />-->
         <activity
             android:name=".activity.ViewGeneralCourseActivity"
             android:exported="false" />
@@ -43,9 +46,7 @@
             android:exported="false" />
         <activity
             android:name=".activity.AddLectureActivity"
-            android:exported="true" >
-
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".activity.GradingActivity"
             android:exported="false" />
@@ -54,12 +55,10 @@
             android:exported="false" />
         <activity
             android:name=".activity.AddExamSubmissionActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".activity.ViewExamSubmissionActivity"
-            android:exported="true" >
-
-        </activity>
+            android:exported="false"/>
         <activity
             android:name=".activity.ViewCourseFeedbackActivity"
             android:exported="false" />

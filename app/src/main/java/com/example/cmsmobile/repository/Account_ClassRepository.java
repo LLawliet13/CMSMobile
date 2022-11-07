@@ -21,4 +21,7 @@ public class Account_ClassRepository {
     public List<Account_Class> findClassesOfATeacher(int teacher_id){
         return account_classDAO.findClassesByAccountId(teacher_id);
     }
+    public void addAccount_Classes(Account_Class account_class){
+        account_classDAO.addAccount_Class(account_class);
+    }
 }
