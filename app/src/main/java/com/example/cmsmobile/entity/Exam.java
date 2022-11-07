@@ -1,6 +1,7 @@
 package com.example.cmsmobile.entity;
 
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity
@@ -24,7 +25,7 @@ public class Exam {
 
     public Exam() {
     }
-
+    @Ignore
     public Exam(int exam_id, String name, String content, String start_date, String end_date, int course_id, int lecture_id) {
         this.exam_id = exam_id;
         this.name = name;
@@ -34,7 +35,7 @@ public class Exam {
         this.course_id = course_id;
         this.lecture_id = lecture_id;
     }
-
+    @Ignore
     public Exam(String name, String content, String start_date, String end_date, int course_id, int lecture_id) {
         this.name = name;
         this.content = content;

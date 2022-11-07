@@ -1,6 +1,7 @@
 package com.example.cmsmobile.entity;
 
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity
@@ -13,6 +14,7 @@ public class Account_Class {
     public Account_Class() {
     }
 
+    @Ignore
     public Account_Class(Integer account_id, Integer class_id) {
         this.account_id = account_id;
         this.class_id = class_id;

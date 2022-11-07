@@ -8,6 +8,7 @@ import androidx.room.Query;
 import androidx.room.Update;
 import com.example.cmsmobile.entity.Classes;
 import java.util.List;
+import java.util.Optional;
 
 @Dao
 public interface ClassesDAO {
@@ -25,10 +26,9 @@ public interface ClassesDAO {
     List<Classes> getAll();
 
     @Query("SELECT * FROM Classes WHERE class_id = :id")
-    Classes findById(int id);
+    Optional<Classes> findById(int id);
 
-    @Query("SELECT * FROM Classes WHERE course_id = :course_id")
-    Classes findClassByCourseId(int course_id);
+
     @Query("SELECT * FROM Classes WHERE name = :name")
     Classes findClassByName(String name);
 }

@@ -34,9 +34,10 @@ public class HomeActivity extends AppCompatActivity {
     Button profileBtn;
     RoleRepository roleRepository;
     AccountRepository accountRepository;
-    Account_ClassRepository account_classRepository;
     ClassRepository classRepository;
     CourseRepository courseRepository;
+    Account_ClassRepository account_classRepository;
+
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -44,6 +45,11 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         roleRepository = new RoleRepository(this);
+        accountRepository = new AccountRepository(this);
+        courseRepository = new CourseRepository(this);
+        classRepository = new ClassRepository(this);
+        account_classRepository = new Account_ClassRepository(this);
+
         if (roleRepository.getAllRoles().size() == 0){
             roleRepository.setUpRoles();
             if(accountRepository.getAllAccounts().size() == 0)

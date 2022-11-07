@@ -2,6 +2,7 @@ package com.example.cmsmobile.entity;
 
 import androidx.annotation.Nullable;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity
@@ -62,12 +63,12 @@ public class Announcement {
     public void setCourse_id(int course_id) {
         this.course_id = course_id;
     }
-
+    @Ignore
     public Announcement(String content, String name) {
         this.content = content;
         this.name = name;
     }
-
+    @Ignore
     public Announcement(String content, @Nullable String file, String name, int account_id, int course_id) {
         this.content = content;
         this.file = file;
@@ -75,7 +76,7 @@ public class Announcement {
         this.account_id = account_id;
         this.course_id = course_id;
     }
-
+    @Ignore
     public Announcement(String content, @Nullable String file, String name) {
         this.content = content;
         this.file = file;

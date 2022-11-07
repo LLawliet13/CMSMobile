@@ -12,6 +12,7 @@ import com.example.cmsmobile.entity.Account;
 import com.example.cmsmobile.entity.CMSDatabase;
 import com.example.cmsmobile.entity.Role;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AccountRepository {
@@ -40,7 +41,9 @@ public class AccountRepository {
         );
     }
     public List<Account> getAllAccounts(){
-        return accountDAO.getAll();
+        List<Account> accountList = new ArrayList<>();
+         accountList.addAll(accountDAO.getAll());
+        return accountList;
     }
 
     public void updateAccount(Account account){
@@ -55,5 +58,9 @@ public class AccountRepository {
             
         }
         return null;
+    }
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public Account getAccountById(int account_id){
+        return accountDAO.getAll().stream().filter(a -> a.getAccount_id() == account_id).findFirst().get();
     }
 }

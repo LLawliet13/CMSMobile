@@ -37,15 +37,15 @@ public class SearchCourseActivity extends AppCompatActivity {
         CourseRepository courseRepository = new CourseRepository(this);
         searchTxt = findViewById(R.id.searchTxt);
         search = findViewById(R.id.searchBtn);
-        ListView courseListView = (ListView) findViewById(R.id.search_list);
+        ListView courseListView = (ListView) findViewById(R.id.search_list_search_course_activity);
         List<Course> courses = new ArrayList<>();
+
         search.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
                 String searchName = searchTxt.getText().toString();
                 List<Course> course = courseRepository.getCourseByName(searchName);
-                courses.addAll(courseRepository.getAllCourses());
                 courses.addAll(courseRepository.getCourseByName(searchName));
                 courses.add(0, new Course());
 
@@ -53,11 +53,6 @@ public class SearchCourseActivity extends AppCompatActivity {
                 courseListView.setAdapter(adapter);
                 if (courses.isEmpty()) {
                     Toast.makeText(getApplicationContext(), "No contain", Toast.LENGTH_LONG).show();
-
-                } else {
-                    Intent intent = new Intent(SearchCourseActivity.this, SearchCourseActivity.class);
-                    startActivity(intent);
-
                 }
             }
         });

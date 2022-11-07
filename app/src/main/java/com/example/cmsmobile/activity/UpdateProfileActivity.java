@@ -36,10 +36,10 @@ public class UpdateProfileActivity extends AppCompatActivity {
         extras = getIntent().getExtras();
         backButton = findViewById(R.id.profile_cancelbutton);
         saveButton = findViewById(R.id.profile_savebutton);
-        email = extras.getString("email");
         Account acc = null;
         try {
-            acc = accRepo.getAccountByEmail(email);
+            int account_id = getSharedPreferences("session",MODE_PRIVATE).getInt("account_id",0);
+            acc = accRepo.getAccountById(account_id);
         } catch (Exception e) {
             acc = null;
             e.printStackTrace();
