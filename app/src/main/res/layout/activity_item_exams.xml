@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green_background"
+    android:orientation="vertical">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:stretchColumns="0,1,2">
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_column="0"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tvDueDate"
+                android:layout_column="1"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="@integer/material_motion_duration_medium_2"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20dp" >
+                <Button
+                    android:id="@+id/btn_edit_exam"
+                    android:text="Edit"
+                    android:backgroundTint="@color/success"
+                    android:textColor="@color/black"/>
+                <Button
+                    android:id="@+id/btn_remove_exam"
+                    android:text="Remove"
+                    android:layout_marginLeft="10dp"
+                    android:backgroundTint="@color/alert"
+                    android:textColor="@color/black"/>
+            </GridLayout>
+
+        </TableRow>
+    </TableLayout>
+</LinearLayout>
