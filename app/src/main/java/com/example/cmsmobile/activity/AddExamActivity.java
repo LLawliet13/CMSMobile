@@ -33,11 +33,12 @@ public class AddExamActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int course_id = getIntent().getExtras().getInt("course_id");
                 String examTitle = etExamTitle.getText().toString().trim();
                 String description = etClassDescription.getText().toString().trim();
                 String startDate = etStartDate.getText().toString().trim();
                 String endDate = etEndDate.getText().toString().trim();
-                Exam exam = ValidationExam(examTitle, description, startDate, endDate);
+                Exam exam = ValidationExam(examTitle, description, startDate, endDate, course_id);
                 examRepository.addExam(exam);
                 Toast.makeText(AddExamActivity.this, "Add exam successfully!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(AddExamActivity.this, ViewExamActivity.class);
@@ -49,6 +50,7 @@ public class AddExamActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AddExamActivity.this, ViewExamActivity.class);
+                intent.putExtra("class_id", getIntent().getExtras().getInt("class_id"));
                 startActivity(intent);
             }
         });
@@ -63,7 +65,7 @@ public class AddExamActivity extends AppCompatActivity {
         btnCancel = findViewById(R.id.btnCancel);
     }
 
-    public Exam ValidationExam(String examTitle, String description, String startDate, String endDate){
+    public Exam ValidationExam(String examTitle, String description, String startDate, String endDate, int course_id){
         if(examTitle.isEmpty()){
             Toast.makeText(AddExamActivity.this, "Exam title is required!", Toast.LENGTH_SHORT).show();
             return null;
@@ -88,7 +90,7 @@ public class AddExamActivity extends AppCompatActivity {
             }
         }
 
-        Exam exam = new Exam(examTitle, description, startDate, endDate, 1, 2);
+        Exam exam = new Exam(examTitle, description, startDate, endDate, course_id, 0);
         return exam;
     }
 }
