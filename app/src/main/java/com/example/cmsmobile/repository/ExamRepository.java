@@ -39,4 +39,6 @@ public class ExamRepository {
     public List<Exam> getExamsByCourseId(int id){
         return examDAO.findExamsByCourseId(id);
     }
+
+    public Exam getExamById(int id) { return examDAO.getExamById(id);}
 }

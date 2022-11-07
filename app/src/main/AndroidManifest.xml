@@ -96,9 +96,9 @@
             android:name=".activity.ClassListActivity"
             android:exported="false">
         </activity>
-        <activity
-            android:name=".activity.ViewClassDetailActivity"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".activity.ViewClassDetailActivity"-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".activity.ViewExamActivity"
             android:exported="false" />
