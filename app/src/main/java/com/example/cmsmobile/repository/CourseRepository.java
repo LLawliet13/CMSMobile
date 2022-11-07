@@ -40,15 +40,14 @@ public class CourseRepository {
     public void updateCourse(Course course){
         courseDAO.updateCourse(course);
     }
-    public List<Course> getCourseByName(String name) {
+    public Course getCourseByName(String name) {
         List<Course> courseList = courseDAO.getAllCourse();
-        List<Course> courseList1 = courseDAO.getAllCourse();
         for (Course c : courseList) {
             if(c.getName().contains(name)){
-                courseList1.add(c);
+                return c;
             }
 
         }
-        return courseList1;
+        return null;
     }
 }

@@ -37,12 +37,13 @@
         android:layout_marginRight="10dp"
         android:text="Course Name - Lecture Name"
         android:textSize="25dp"
-        android:id="@+id/courseName"
+        android:id="@+id/course_title"
         android:textColor="@color/black"
         android:textStyle="bold"/>
 
 
     <GridLayout
+        android:id="@+id/course_link"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -133,7 +134,7 @@
         android:background="@color/white"
         android:layout_marginTop="10dp"/>
     <GridView
-        android:id="@+id/gridViewClass"
+        android:id="@+id/grid_list_item"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollY="@dimen/cardview_default_radius"
