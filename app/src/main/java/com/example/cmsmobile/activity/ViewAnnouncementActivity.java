@@ -3,7 +3,9 @@ package com.example.cmsmobile.activity;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -35,6 +37,8 @@ AnnouncementRepository announcementRepository;
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),AddAnnouncementActivity.class);
                 startActivity(intent);
+                SharedPreferences pref = getApplicationContext().getSharedPreferences("session", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = pref.edit();
             }
         });
     }

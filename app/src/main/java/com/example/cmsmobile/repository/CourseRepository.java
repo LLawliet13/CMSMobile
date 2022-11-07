@@ -1,6 +1,11 @@
 package com.example.cmsmobile.repository;
 
 import android.content.Context;
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
+import com.example.cmsmobile.dao.AccountDAO;
 
 import com.example.cmsmobile.dao.CourseDAO;
 import com.example.cmsmobile.entity.Account;
@@ -20,6 +25,21 @@ public class CourseRepository {
         return courseDAO;
     }
 
+    public void addCourse(Course course){
+        courseDAO.insertCourse(course);
+    }
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public Course getCourseById(int id) throws Exception {
+        return courseDAO.findById(id).orElseThrow(()->
+                new Exception("No Course Found")
+        );
+    }
+    public List<Course> getAllCourses(){
+        return courseDAO.getAllCourse();
+    }
+    public void updateCourse(Course course){
+        courseDAO.updateCourse(course);
+    }
     public List<Course> getCourseByName(String name) {
         List<Course> courseList = courseDAO.getAllCourse();
         List<Course> courseList1 = courseDAO.getAllCourse();
@@ -30,5 +50,13 @@ public class CourseRepository {
 
         }
         return courseList1;
+    }
+
+    public Course course(int id){
+        return courseDAO.findCourseById(id);
+    }
+
+    public Course getCourseByClassId(int class_id){
+        return courseDAO.findCourseByClassId(class_id);
     }
 }

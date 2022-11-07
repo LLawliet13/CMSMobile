@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.example.cmsmobile.R;
 import com.example.cmsmobile.adapter.ExamViewAdapter;
 import com.example.cmsmobile.entity.Exam;
+import com.example.cmsmobile.repository.CourseRepository;
 import com.example.cmsmobile.repository.ExamRepository;
 
 import java.util.ArrayList;
@@ -26,6 +27,7 @@ public class ViewExamActivity extends AppCompatActivity {
 
     private ExamViewAdapter examViewAdapter;
     private ExamRepository examRepository;
+    private CourseRepository courseRepository;
     private List<Exam> listExams;
 
     @Override
@@ -36,8 +38,12 @@ public class ViewExamActivity extends AppCompatActivity {
         initUI();
         examViewAdapter = new ExamViewAdapter();
         examRepository = new ExamRepository(this);
+        courseRepository = new CourseRepository(this);
 
-        listExams = new ArrayList<>();
+        int class_id = getIntent().getExtras().getInt("class_id");
+        courseRepository.getCourseByClassId(class_id);
+
+        listExams = examRepository.getExamsByCourseId(class_id);
         examViewAdapter.setData(listExams);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);

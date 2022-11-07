@@ -3,6 +3,8 @@ package com.example.cmsmobile.activity;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -16,11 +18,13 @@ import com.example.cmsmobile.repository.AnnouncementRepository;
 
 public class AddAnnouncementActivity extends AppCompatActivity {
     private EditText title, description;
-    Button add;
+    Button add,cancel;
     AnnouncementRepository announcementRepository;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("session", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
         setContentView(R.layout.activity_add_announcement);
         title = findViewById(R.id.titleTxt);
         description = findViewById(R.id.descriptionTxt);
@@ -32,6 +36,14 @@ public class AddAnnouncementActivity extends AppCompatActivity {
                 add();
             }
         });
+        cancel= findViewById(R.id.cancelBtn);
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void add() {
@@ -39,8 +51,8 @@ public class AddAnnouncementActivity extends AppCompatActivity {
             String name = title.getText().toString();
             String content = description.getText().toString();
             Announcement announcement = new Announcement();
-            announcement.setName(title.getText().toString());
-            announcement.setContent(description.getText().toString());
+            announcement.setName(name);
+            announcement.setContent(content);
             announcementRepository.addAnnouncement(announcement);
             Toast.makeText(this,"Add announcement successfully",Toast.LENGTH_LONG).show();
             finish();

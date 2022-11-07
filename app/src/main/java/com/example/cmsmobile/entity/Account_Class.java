@@ -13,6 +13,11 @@ public class Account_Class {
     public Account_Class() {
     }
 
+    public Account_Class(Integer account_id, Integer class_id) {
+        this.account_id = account_id;
+        this.class_id = class_id;
+    }
+
     public Integer getAccount_id() {
         return account_id;
     }

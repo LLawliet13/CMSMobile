@@ -29,4 +29,6 @@ public interface ClassesDAO {
 
     @Query("SELECT * FROM Classes WHERE course_id = :course_id")
     Classes findClassByCourseId(int course_id);
+    @Query("SELECT * FROM Classes WHERE name = :name")
+    Classes findClassByName(String name);
 }
