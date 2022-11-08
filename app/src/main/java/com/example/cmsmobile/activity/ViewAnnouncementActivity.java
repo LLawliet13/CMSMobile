@@ -44,6 +44,7 @@ AnnouncementRepository announcementRepository;
         announcements.add(0, new Announcement());
         AnnouncementViewAdapter adapter = new AnnouncementViewAdapter(ViewAnnouncementActivity.this,announcements.stream().toArray(Announcement[]::new));
         announcementListView.setAdapter(adapter);
+
         add.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override

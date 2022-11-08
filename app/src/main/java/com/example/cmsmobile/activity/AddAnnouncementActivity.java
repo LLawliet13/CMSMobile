@@ -4,6 +4,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
@@ -20,11 +21,14 @@ public class AddAnnouncementActivity extends AppCompatActivity {
     private EditText title, description;
     Button add,cancel;
     AnnouncementRepository announcementRepository;
+    int account_id, currentAccountId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         SharedPreferences pref = getApplicationContext().getSharedPreferences("session", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
+        currentAccountId = getSharedPreferences("session", Context.MODE_PRIVATE).getInt("account_id", 0);
+        account_id = 1;
         announcementRepository = new AnnouncementRepository(this);
         setContentView(R.layout.activity_add_announcement);
         title = findViewById(R.id.titleTxt);
@@ -55,8 +59,14 @@ public class AddAnnouncementActivity extends AppCompatActivity {
             announcement.setName(name);
             announcement.setContent(content);
             announcementRepository.addAnnouncement(announcement);
-            Toast.makeText(this,"Add announcement successfully",Toast.LENGTH_LONG).show();
-            finish();
+            if(name.isEmpty() || content.isEmpty()){
+                Toast.makeText(this,"Fill all field!",Toast.LENGTH_LONG).show();
+            }else{
+                Toast.makeText(this,"Add announcement successfully",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(this,ViewAnnouncementActivity.class);
+                startActivity(intent);
+//            finish();
+            }
         } catch (Exception ex) {
             Toast.makeText(this,"Cant add announcement",Toast.LENGTH_LONG).show();
         }

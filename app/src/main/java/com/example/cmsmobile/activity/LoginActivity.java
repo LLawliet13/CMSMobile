@@ -23,7 +23,7 @@ import java.util.Optional;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText editTextUserName, editTextPassword;
-    Button LoginBtn, back;
+    Button LoginBtn, back,forgetBtn;
     private RoleRepository roleRepository;
 
     @Override
@@ -33,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
         roleRepository = new RoleRepository(this);
         back = findViewById(R.id.backBtn);
         LoginBtn = findViewById(R.id.LoginBtn);
+        forgetBtn = findViewById(R.id.forgetBtn);
         editTextUserName = findViewById(R.id.editTextUserName);
         editTextPassword = findViewById(R.id.editTextPassword);
         LoginBtn.setOnClickListener(new View.OnClickListener() {
@@ -49,8 +50,7 @@ public class LoginActivity extends AppCompatActivity {
                     AccountRepository accountRepository = new AccountRepository(LoginActivity.this);
                     Account account = accountRepository.Login(username, password);
                     if (account == null) {
-                        Toast.makeText(getApplicationContext(), "Invalid", Toast.LENGTH_LONG).show();
-
+                        Toast.makeText(getApplicationContext(), "Email or password invalid, try again!", Toast.LENGTH_LONG).show();
                     } else {
                         Optional<Role> role = roleRepository.getAllRoles().stream().filter(r -> r.getRole_id() == account.getRole_id()).findAny();
                         SharedPreferences pref = getApplicationContext().getSharedPreferences("session", Context.MODE_PRIVATE);
@@ -71,6 +71,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+        forgetBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this,ForgetPasswordActivity.class);
+                startActivity(intent);
             }
         });
     }
