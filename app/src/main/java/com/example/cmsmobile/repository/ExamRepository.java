@@ -1,9 +1,13 @@
 package com.example.cmsmobile.repository;
 
 import android.content.Context;
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
 
 import com.example.cmsmobile.dao.ExamDAO;
 import com.example.cmsmobile.entity.CMSDatabase;
+import com.example.cmsmobile.entity.Course;
 import com.example.cmsmobile.entity.Exam;
 
 import java.util.List;
@@ -39,4 +43,15 @@ public class ExamRepository {
     public List<Exam> getExamsByCourseId(int id){
         return examDAO.findExamsByCourseId(id);
     }
+
+    public Exam getExamById(int id) {
+        List<Exam> examList = examDAO.getAll();
+        for (Exam e : examList) {
+            if(e.getExam_id()==id){
+                return e;
+            }
+        }
+        return null;
+    }
+
 }

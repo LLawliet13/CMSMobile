@@ -90,10 +90,10 @@ public class LectureAdapter extends BaseAdapter {
         });
 
         String user_role = activity.getSharedPreferences("session", Context.MODE_PRIVATE).getString("role", "student");
-        if (user_role.equals("student")){
-            btn_remove.setVisibility(View.GONE);
-            btn_edit.setVisibility(View.GONE);
-        }
+//        if (user_role.equals("student")){
+//            btn_remove.setVisibility(View.GONE);
+//            btn_edit.setVisibility(View.GONE);
+//        }
 
         return convertView;
     }

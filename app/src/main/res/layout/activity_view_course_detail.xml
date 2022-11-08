@@ -8,6 +8,7 @@
     tools:context=".activity.ViewCourseDetail"
     android:background="@color/green_background">
 
+
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
