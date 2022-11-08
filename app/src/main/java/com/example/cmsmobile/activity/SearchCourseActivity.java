@@ -20,6 +20,7 @@ import com.example.cmsmobile.adapter.CourseViewAdapter;
 import com.example.cmsmobile.adapter.SearchAdapter;
 import com.example.cmsmobile.entity.Course;
 import com.example.cmsmobile.entity.Role;
+import com.example.cmsmobile.repository.ClassRepository;
 import com.example.cmsmobile.repository.CourseRepository;
 
 import java.util.ArrayList;
@@ -29,7 +30,7 @@ import java.util.Optional;
 public class SearchCourseActivity extends AppCompatActivity {
     EditText searchTxt;
     Button search;
-
+    ClassRepository classRepository;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +40,7 @@ public class SearchCourseActivity extends AppCompatActivity {
         search = findViewById(R.id.searchBtn);
         ListView courseListView = (ListView) findViewById(R.id.search_list_search_course_activity);
         List<Course> courses = new ArrayList<>();
+        classRepository = new ClassRepository(this);
 
         search.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
@@ -62,9 +64,10 @@ public class SearchCourseActivity extends AppCompatActivity {
                                     long id) {
                 Course selectedItem = (Course) parent.getItemAtPosition(position);
                 Toast.makeText(view.getContext(), selectedItem.getName(), Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(getApplicationContext(), ViewGeneralCourseActivity.class);
+                Intent intent = new Intent(SearchCourseActivity.this, ClassListActivity.class);
                 intent.putExtra("course_id", selectedItem.getCourse_id() + "");
                 intent.putExtra("name", selectedItem.getName());
+
 //                intent.putExtra("price",selectedItem.getPrice()+"");
 
                 startActivity(intent);

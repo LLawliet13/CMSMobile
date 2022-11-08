@@ -23,31 +23,37 @@ import com.example.cmsmobile.repository.Account_ClassRepository;
 import com.example.cmsmobile.repository.ClassRepository;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ClassListActivity extends AppCompatActivity {
 
     int account_id;
     String role;
+    int courseId;
+
     ClassRepository classRepository;
     AccountRepository accountRepository;
     Account_ClassRepository account_classRepository;
     List<Account_Class> account_classList;
     Button addAClassButton;
-    int courseId;
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_class_list);
         classRepository = new ClassRepository(this);
-        addAClassButton = findViewById(R.id.add_class_classListActivity_button);
         accountRepository = new AccountRepository(this);
+        account_classRepository = new Account_ClassRepository(this);
+
+        addAClassButton = findViewById(R.id.add_class_classListActivity_button);
+
 //        account_classRepository = new Account_ClassRepository(this);
 //        account_id = getApplicationContext().getSharedPreferences("session", Context.MODE_PRIVATE).getInt("account_id", 0);
 //        if (account_id > 0) {
         account_id = getApplicationContext().getSharedPreferences("session", Context.MODE_PRIVATE).getInt("account_id", 0);
         role = getApplicationContext().getSharedPreferences("session", Context.MODE_PRIVATE).getString("role", "");
-        courseId = getIntent().getExtras().getInt("course_id");
+//        courseId = getIntent().getExtras().getInt("course_id");//fake
+        courseId = 1;
         if (role.equals("teacher")) {
             account_classList = account_classRepository.findClassesOfATeacher(account_id);
 
@@ -63,10 +69,13 @@ public class ClassListActivity extends AppCompatActivity {
             }
 
         });
-        Classes[] classes = classRepository.getAllClassesList().stream().filter(c -> c.getCourse_id() == courseId).toArray(Classes[]::new);
+        List<Classes> classesChoosed  = classRepository.getAllClassesList().stream().filter(c -> c.getCourse_id() == courseId).collect(Collectors.toList());
+        classesChoosed.add(0,new Classes());
+        Classes[] classes = classesChoosed.stream().toArray(Classes[]::new);
+
         ListView classList = (ListView) findViewById(R.id.classList_classListActivity);
         ClassListActivityAdapter adapter = new ClassListActivityAdapter(classes, this
-                , role, accountRepository.getAllAccounts(), account_classRepository.getAllAccount_Class(), this,account_id );
+                , role,account_id, accountRepository.getAllAccounts(), account_classRepository.getAllAccount_Class(), this,courseId );
         classList.setAdapter(adapter);
         classList.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override

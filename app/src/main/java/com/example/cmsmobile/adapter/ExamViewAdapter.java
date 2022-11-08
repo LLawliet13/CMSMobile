@@ -1,5 +1,7 @@
 package com.example.cmsmobile.adapter;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.text.Layout;
 import android.view.LayoutInflater;
@@ -26,6 +28,12 @@ public class ExamViewAdapter extends RecyclerView.Adapter<ExamViewAdapter.ExamVi
 
     private List<Exam> listExams;
 
+    private Context context;
+
+    public ExamViewAdapter(Context context){
+        this.context = context;
+    }
+
     public void setData(List<Exam> list) {
         this.listExams = list;
         notifyDataSetChanged();
@@ -46,10 +54,20 @@ public class ExamViewAdapter extends RecyclerView.Adapter<ExamViewAdapter.ExamVi
         }
         holder.tvTitle.setText(exam.getName());
         holder.tvDueDate.setText(exam.getEnd_date());
-        holder.btnEditExam.setOnClickListener(new View.OnClickListener() {
+        holder.tvTitle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), EditExamActivity.class);
+                Toast.makeText(context, "Click thành công", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        holder.btnEditExam.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, EditExamActivity.class);
+                int class_id = ((Activity) context).getIntent().getExtras().getInt("class_id");
+                intent.putExtra("class_id", class_id);
                 intent.putExtra("exam_id", exam.getExam_id());
                 v.getContext().startActivity(intent);
             }

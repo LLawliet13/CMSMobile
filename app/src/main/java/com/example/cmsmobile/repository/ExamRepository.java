@@ -44,14 +44,6 @@ public class ExamRepository {
         return examDAO.findExamsByCourseId(id);
     }
 
-    public Exam getExamById(int id) {
-        List<Exam> examList = examDAO.getAll();
-        for (Exam e : examList) {
-            if(e.getExam_id()==id){
-                return e;
-            }
-        }
-        return null;
-    }
 
+    public Exam getExamById(int id) { return examDAO.getExamById(id);}
 }
