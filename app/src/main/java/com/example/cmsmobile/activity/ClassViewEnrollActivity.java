@@ -61,7 +61,7 @@ public class ClassViewEnrollActivity extends AppCompatActivity {
 
         Optional<Account_Class> findExist = account_classRepository.getAllAccount_Class().stream().filter(
                 ac -> ac.getClass_id() == class_id && ac.getAccount_id() == account_id).findAny();
-        if (findExist.isPresent()) {
+        if (!findExist.isPresent()) {//fix cung de vao man 6
             Intent intent = new Intent(ClassViewEnrollActivity.this, ViewClassDetailActivity.class);
             intent.putExtra("class_id", class_id);
             startActivity(intent);

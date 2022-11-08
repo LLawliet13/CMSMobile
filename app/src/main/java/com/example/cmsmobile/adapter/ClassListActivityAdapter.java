@@ -18,7 +18,10 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cmsmobile.R;
+import com.example.cmsmobile.activity.ClassListActivity;
+import com.example.cmsmobile.activity.ClassViewEnrollActivity;
 import com.example.cmsmobile.activity.EditClassActivity;
+import com.example.cmsmobile.activity.ViewClassDetailActivity;
 import com.example.cmsmobile.entity.Account;
 import com.example.cmsmobile.entity.Account_Class;
 import com.example.cmsmobile.entity.Classes;
@@ -68,7 +71,10 @@ public class ClassListActivityAdapter extends BaseAdapter {
         LayoutInflater inflater = activity.getLayoutInflater();
         convertView = inflater.inflate(R.layout.class_item_d, null);
         Button edit_button = (Button) convertView.findViewById(R.id.edit_button_classListActivity);
+        Button view_button =(Button) convertView.findViewById(R.id.view_button_classListActivity);
         edit_button.setText("Edit Class");
+        view_button.setText("View Class");
+        view_button.setVisibility(View.VISIBLE);
 //        Button delete_button = (Button) convertView.findViewById(R.id.edit_button_classListActivity);
         if (position == 0) {
             TextView class_name = (TextView) convertView.findViewById(R.id.class_name_classListActivity);
@@ -76,6 +82,7 @@ public class ClassListActivityAdapter extends BaseAdapter {
             TextView teacher_name = (TextView) convertView.findViewById(R.id.teacher_name_classListActivity);
             teacher_name.setText("Teacher Name");
             edit_button.setVisibility(View.GONE);
+            view_button.setVisibility(View.GONE);
 //            delete_button.setVisibility(View.GONE);
         } else {
             edit_button.setVisibility(View.GONE);
@@ -107,7 +114,21 @@ public class ClassListActivityAdapter extends BaseAdapter {
 
                 }
             });
+
         }
+        view_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(position==0) return;
+                int class_id = items[position].getClass_id();
+
+                Intent intent = new Intent(activity.getApplicationContext(), ClassViewEnrollActivity.class);
+                intent.putExtra("class_id",class_id);
+                intent.putExtra("course_id",class_id);
+                //based on item add info to intent
+                activity.startActivity(intent);
+            }
+        });
         return convertView;
     }
 }
