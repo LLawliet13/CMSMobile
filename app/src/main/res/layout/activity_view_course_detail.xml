@@ -140,6 +140,7 @@
             android:text="Lecture Name"></TextView>
 
         <TextView
+            android:id="@+id/tv_action_lecture_item"
             android:layout_width="220dp"
             android:layout_height="36dp"
             android:layout_centerVertical="true"

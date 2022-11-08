@@ -1,6 +1,7 @@
 package com.example.cmsmobile.adapter;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.view.LayoutInflater;
@@ -49,6 +50,7 @@ public class LectureAdapter extends BaseAdapter {
         LayoutInflater inflater = activity.getLayoutInflater();
         convertView = inflater.inflate(R.layout.lecture_item,null);
         TextView textView = (TextView) convertView.findViewById(R.id.et_lecture_name_item);
+        TextView tv_action = (TextView) convertView.findViewById(R.id.tv_action_lecture_item);
         Button btn_edit = (Button) convertView.findViewById(R.id.btn_edit_lecture_item);
         Button btn_remove = (Button) convertView.findViewById(R.id.btn_remove_lecture_item);
 
@@ -86,6 +88,12 @@ public class LectureAdapter extends BaseAdapter {
                 v.getContext().startActivity(intent);
             }
         });
+
+        String user_role = activity.getSharedPreferences("session", Context.MODE_PRIVATE).getString("role", "student");
+        if (user_role.equals("student")){
+            btn_remove.setVisibility(View.GONE);
+            btn_edit.setVisibility(View.GONE);
+        }
 
         return convertView;
     }
