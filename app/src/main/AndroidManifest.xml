@@ -59,7 +59,7 @@
             android:name=".activity.SearchCourseActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".activity.HomeActivity"
             android:exported="true">
                         <intent-filter>
                             <action android:name="android.intent.action.MAIN" />
@@ -92,10 +92,10 @@
         <activity
             android:name=".activity.RegisterActivity"
             android:exported="false" />
-        <activity
-            android:name=".activity.ClassListActivity"
-            android:exported="false">
-        </activity>
+<!--        <activity-->
+<!--            android:name=".activity.ClassListActivity"-->
+<!--            android:exported="false">-->
+<!--        </activity>-->
         <activity
             android:name=".activity.ViewClassDetailActivity"
             android:exported="false" />
