@@ -55,13 +55,14 @@ public class AccountRepository {
             if (acc.getEmail().equals(email) && acc.getPassword().equals(password)) {
                 return acc;
             }
-
         }
         return null;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public Account getAccountById(int account_id) {
-        return accountDAO.getAll().stream().filter(a -> a.getAccount_id() == account_id).findFirst().get();
+    public Account getAccountById(int id) throws Exception {
+        return accountDAO.findById(id).orElseThrow(()->
+                new Exception("No Account Found")
+        );
     }
 }

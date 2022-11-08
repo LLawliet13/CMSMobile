@@ -8,6 +8,7 @@
     tools:context=".activity.ViewCourseDetail"
     android:background="@color/green_background">
 
+
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -37,12 +38,13 @@
         android:layout_marginRight="10dp"
         android:text="Course Name - Lecture Name"
         android:textSize="25dp"
-        android:id="@+id/courseName"
+        android:id="@+id/course_title"
         android:textColor="@color/black"
         android:textStyle="bold"/>
 
 
     <GridLayout
+        android:id="@+id/course_link"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -82,12 +84,14 @@
     </GridLayout>
 
     <TextView
+        android:id="@+id/sep_white"
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:background="@color/white"
         android:layout_marginTop="10dp"/>
 
     <GridLayout
+        android:id="@+id/gridLayout_teacher"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
@@ -105,16 +109,6 @@
             android:backgroundTint="@color/pinky"
             android:text="View Course Feedback"
             android:textColor="@color/black" />
-
-        <Button
-            android:id="@+id/btn_view_course_exam"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
-            android:layout_gravity="center"
-            android:layout_marginBottom="5dp"
-            android:text="View Exam"
-            android:textColor="@color/black"/>
         <Button
             android:id="@+id/btn_add_course_lecture"
             android:layout_width="300dp"
@@ -132,12 +126,47 @@
         android:layout_height="10dp"
         android:background="@color/white"
         android:layout_marginTop="10dp"/>
-    <GridView
-        android:id="@+id/gridViewClass"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollY="@dimen/cardview_default_radius"
-        android:layout_margin="10dp">
+        android:layout_height="60dp">
+        <TextView
+            android:layout_width="220dp"
+            android:layout_height="36dp"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingTop="20dp"
+            android:textSize="13dp"
+            android:text="Lecture Name"></TextView>
 
-    </GridView>
+        <TextView
+            android:id="@+id/tv_action_lecture_item"
+            android:layout_width="220dp"
+            android:layout_height="36dp"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingTop="20dp"
+            android:textSize="13dp"
+            android:text="Action"></TextView>
+
+    </LinearLayout>
+    <ListView
+        android:id="@+id/lecture_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"></ListView>
+<!--    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--        android:layout_width="fill_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/rcvExamView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_marginTop="10dp" />-->
+<!--    </ScrollView>-->
+
 </LinearLayout>

@@ -12,6 +12,7 @@ import com.example.cmsmobile.entity.Account;
 import com.example.cmsmobile.entity.CMSDatabase;
 import com.example.cmsmobile.entity.Course;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CourseRepository {
@@ -40,16 +41,25 @@ public class CourseRepository {
     public void updateCourse(Course course){
         courseDAO.updateCourse(course);
     }
-    public List<Course> getCourseByName(String name) {
+    public Course getCourseByName1(String name) {
         List<Course> courseList = courseDAO.getAllCourse();
-        List<Course> courseList1 = courseDAO.getAllCourse();
         for (Course c : courseList) {
-            if(c.getName().contains(name)){
-                courseList1.add(c);
+            if(c.getName().equals(name)){
+                return c;
             }
 
         }
-        return courseList1;
+        return null;
+    }
+    public List<Course> getCourseByName(String name) {
+        List<Course> courseList = courseDAO.getAllCourse();
+        List<Course> res_list = new ArrayList<>();
+        for (Course c : courseList) {
+            if(c.getName().contains(name)){
+                res_list.add(c);
+            }
+        }
+        return res_list;
     }
 
 }
