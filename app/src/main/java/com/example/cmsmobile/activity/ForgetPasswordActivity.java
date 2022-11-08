@@ -57,8 +57,8 @@ public class ForgetPasswordActivity extends AppCompatActivity {
     private EditText email;
     String forgetPasswordEmail;
     String TokenSentToEmail;
-    final String username = "dung123432110@gmail.com";
-    final String password = "zxhxkzqysizihyhw";
+    final String username = "servicecmsabcd@gmail.com";
+    final String password = "jeiigqkybzkmulbj";
     //aksavouejqwghduq \\ real abcede123
 
     @RequiresApi(api = Build.VERSION_CODES.N)
