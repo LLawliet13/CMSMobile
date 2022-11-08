@@ -25,6 +25,7 @@ public class AddAnnouncementActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         SharedPreferences pref = getApplicationContext().getSharedPreferences("session", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
+        announcementRepository = new AnnouncementRepository(this);
         setContentView(R.layout.activity_add_announcement);
         title = findViewById(R.id.titleTxt);
         description = findViewById(R.id.descriptionTxt);

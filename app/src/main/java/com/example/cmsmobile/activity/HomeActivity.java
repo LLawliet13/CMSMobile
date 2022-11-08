@@ -17,10 +17,12 @@ import com.example.cmsmobile.R;
 
 import com.example.cmsmobile.entity.Account;
 import com.example.cmsmobile.entity.Account_Class;
+import com.example.cmsmobile.entity.Announcement;
 import com.example.cmsmobile.entity.Classes;
 import com.example.cmsmobile.entity.Course;
 import com.example.cmsmobile.repository.AccountRepository;
 import com.example.cmsmobile.repository.Account_ClassRepository;
+import com.example.cmsmobile.repository.AnnouncementRepository;
 import com.example.cmsmobile.repository.ClassRepository;
 import com.example.cmsmobile.repository.CourseRepository;
 import com.example.cmsmobile.repository.RoleRepository;
@@ -37,6 +39,7 @@ public class HomeActivity extends AppCompatActivity {
     ClassRepository classRepository;
     CourseRepository courseRepository;
     Account_ClassRepository account_classRepository;
+    AnnouncementRepository announcementRepository;
 
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -49,12 +52,14 @@ public class HomeActivity extends AppCompatActivity {
         courseRepository = new CourseRepository(this);
         classRepository = new ClassRepository(this);
         account_classRepository = new Account_ClassRepository(this);
+        announcementRepository = new AnnouncementRepository(this);
 
         if (roleRepository.getAllRoles().size() == 0){
             roleRepository.setUpRoles();
             if(accountRepository.getAllAccounts().size() == 0)
-                accountRepository.addAccount(new Account("sangnv@fpt.edu.vn","123456","Nguyen Van Sang","Ha noi","0123456789",2));
-
+                accountRepository.addAccount(new Account("sangnv@fpt.edu.vn","123456","Nguyen Van Sang","Ha noi","0123456789",2));}
+            if (announcementRepository.getAllAnnouncement().size() == 0){
+                announcementRepository.addAnnouncement(new Announcement("Mai nop bai nhe cac e","Deadline Project"));
             if(courseRepository.getAllCourses().size() ==0)
                 courseRepository.addCourse(new Course("PRM392"));
             if(classRepository.getAllClasses().size()==0){
@@ -69,8 +74,9 @@ public class HomeActivity extends AppCompatActivity {
             }
         }
         AccountRepository accountRepository = new AccountRepository(this);
-        if(accountRepository.getAllAccounts().size() ==0 )
-        accountRepository.execute();
+        if(accountRepository.getAllAccounts().size() ==0 ){
+            accountRepository.execute();
+        }
         Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
         accountName = findViewById(R.id.accountName);
         String name = getIntent().getStringExtra("name");
@@ -141,6 +147,8 @@ public class HomeActivity extends AppCompatActivity {
     }
     public void SearchView(View view) {
         Intent intent = new Intent(HomeActivity.this, SearchCourseActivity.class);
+        if (announcementRepository.getAllAnnouncement().size() == 0){
+            announcementRepository.addAnnouncement(new Announcement("Mai nop bai nhe cac e","Deadline Project"));}
         try {
             startActivity(intent);
         } catch (ActivityNotFoundException e) {

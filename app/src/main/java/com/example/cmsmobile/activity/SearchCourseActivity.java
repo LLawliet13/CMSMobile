@@ -44,12 +44,14 @@ public class SearchCourseActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
+                SearchAdapter searchAdapter = new SearchAdapter();
+                searchAdapter.notifyDataSetChanged();
+                courses.clear();
                 String searchName = searchTxt.getText().toString();
                 List<Course> course = courseRepository.getCourseByName(searchName);
                 courses.addAll(courseRepository.getCourseByName(searchName));
                 courses.add(0, new Course());
-
-                SearchAdapter adapter = new SearchAdapter(SearchCourseActivity.this,courses.stream().toArray(Course[]::new));
+                SearchAdapter adapter = new SearchAdapter(SearchCourseActivity.this, courses.stream().toArray(Course[]::new));
                 courseListView.setAdapter(adapter);
                 if (courses.isEmpty()) {
                     Toast.makeText(getApplicationContext(), "No contain", Toast.LENGTH_LONG).show();
