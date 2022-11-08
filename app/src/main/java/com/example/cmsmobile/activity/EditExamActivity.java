@@ -49,11 +49,6 @@ public class EditExamActivity extends AppCompatActivity {
             return;
         }
 
-        exam.setName(etTitle.getText().toString());
-        exam.setContent(etDescription.getText().toString());
-        exam.setStart_date(etStartDate.getText().toString());
-        exam.setEnd_date(etEndDate.getText().toString());
-
         btn_Save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,6 +69,13 @@ public class EditExamActivity extends AppCompatActivity {
                 int id = getIntent().getExtras().getInt("class_id");
                 intent.putExtra("class_id", getIntent().getExtras().getInt("class_id"));
                 startActivity(intent);
+            }
+        });
+
+        btn_Cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

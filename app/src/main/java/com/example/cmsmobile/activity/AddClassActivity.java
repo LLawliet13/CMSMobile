@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.example.cmsmobile.R;
 import com.example.cmsmobile.entity.Classes;
 import com.example.cmsmobile.entity.Course;
+import com.example.cmsmobile.repository.Account_ClassRepository;
 import com.example.cmsmobile.repository.ClassRepository;
 import com.example.cmsmobile.repository.CourseRepository;
 
@@ -24,6 +25,7 @@ public class AddClassActivity extends AppCompatActivity {
 
     private ClassRepository classRepository;
     private CourseRepository courseRepository;
+    private Account_ClassRepository account_classRepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,7 @@ public class AddClassActivity extends AppCompatActivity {
         initUI();
         classRepository = new ClassRepository(this);
         courseRepository = new CourseRepository(this);
+        account_classRepository = new Account_ClassRepository(this);
 
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,7 +69,7 @@ public class AddClassActivity extends AppCompatActivity {
                     Toast.makeText(AddClassActivity.this, "Class Name can't be empty!", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                Classes classes = new Classes(className, subjectCode, description, teacher, 1);
+                Classes classes = new Classes(className, subjectCode, description, null, 1);
                 if(classes==null){
                     Toast.makeText(AddClassActivity.this, "Class can't be found!", Toast.LENGTH_SHORT).show();
                     return;
