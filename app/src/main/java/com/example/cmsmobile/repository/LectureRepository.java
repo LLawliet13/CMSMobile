@@ -39,4 +39,12 @@ public class LectureRepository {
     public void updateLecture(Lecture lecture){
         lectureDAO.updateLecture(lecture);
     }
+    public List<Lecture> getLecturesByCourseId(int id){
+        return lectureDAO.getLectureByCourseId(id);
+    }
+
+    public void Remove(Lecture lecture){
+        lectureDAO.deleteLecture(lecture);
+    }
+
 }

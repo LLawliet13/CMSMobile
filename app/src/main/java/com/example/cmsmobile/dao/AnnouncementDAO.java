@@ -26,4 +26,6 @@ public interface AnnouncementDAO {
     void delete(Announcement announcement);
     @Query("Select * from Announcement")
     List<Announcement> getAllAnnouncement();
+    @Query("Select * from Announcement where account_id=:account_id")
+    List<Announcement> getAnnouncementFromAccount(int account_id);
 }

@@ -71,7 +71,7 @@ public class ClassListActivityAdapter extends BaseAdapter {
         LayoutInflater inflater = activity.getLayoutInflater();
         convertView = inflater.inflate(R.layout.class_item_d, null);
         Button edit_button = (Button) convertView.findViewById(R.id.edit_button_classListActivity);
-        Button view_button =(Button) convertView.findViewById(R.id.view_button_classListActivity);
+        Button view_button =(Button) convertView.findViewById(R.id.edit_button_classListActivity);
         edit_button.setText("Edit Class");
         view_button.setText("View Class");
         view_button.setVisibility(View.VISIBLE);
