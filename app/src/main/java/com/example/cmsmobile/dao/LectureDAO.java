@@ -34,4 +34,7 @@ public interface LectureDAO {
 
     @Query("Select * from Lecture where lecture_id = :id ")
     Optional<Lecture> findById(int id);
+
+    @Query("Select * from Lecture where course_id=:course_id")
+    List<Lecture> getLectureByCourseId(int course_id);
 }
