@@ -8,6 +8,7 @@ import androidx.annotation.RequiresApi;
 import com.example.cmsmobile.dao.LectureDAO;
 import com.example.cmsmobile.dao.SubmissionDAO;
 import com.example.cmsmobile.entity.CMSDatabase;
+import com.example.cmsmobile.entity.Exam;
 import com.example.cmsmobile.entity.Lecture;
 import com.example.cmsmobile.entity.Submission;
 
@@ -38,5 +39,16 @@ public class SubmissionRepository {
     }
     public void updateSubmission(Submission submission){
         submissionDAO.update(submission);
+    }
+
+    public Submission getNewSubmission()  {
+        List<Submission> submitList = submissionDAO.getAll();
+        Submission res = submitList.get(0);
+        for (Submission e : submitList) {
+            if(e.getSubmission_id()>res.getSubmission_id()){
+                res = e;
+            }
+        }
+        return res;
     }
 }

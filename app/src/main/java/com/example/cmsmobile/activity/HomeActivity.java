@@ -62,15 +62,13 @@ public class HomeActivity extends AppCompatActivity {
             }
             if(account_classRepository.getAllAccount_Class().size()==0){
                 try {
-                    account_classRepository.addAccount_Classes(new Account_Class(accountRepository.getAccountByEmail("sangnv@fpt.edu.vn").getAccount_id(),classRepository.getClassByName("PRM392").getClass_id()));
+                    account_classRepository.addAccount_Classes(new Account_Class(accountRepository.getAccountByEmail("sangnv@fpt.edu.vn").getAccount_id(),classRepository.getClassByName("se1515").getClass_id()));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         }
         AccountRepository accountRepository = new AccountRepository(this);
-        if(accountRepository.getAllAccounts().size() ==0 )
-        accountRepository.execute();
         Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
         accountName = findViewById(R.id.accountName);
         String name = getIntent().getStringExtra("name");

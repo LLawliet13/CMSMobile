@@ -1,13 +1,13 @@
 package com.example.cmsmobile.activity;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,10 +18,9 @@ import com.example.cmsmobile.entity.Lecture;
 import com.example.cmsmobile.repository.CourseRepository;
 import com.example.cmsmobile.repository.LectureRepository;
 
-import java.sql.Date;
+public class EditLectureActivity extends AppCompatActivity {
 
-public class AddLectureActivity extends AppCompatActivity {
-
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,28 +36,51 @@ public class AddLectureActivity extends AppCompatActivity {
         CourseRepository courseRepository = new CourseRepository(this);
 
         Bundle extras = getIntent().getExtras();
-        String course_name = extras.getString("course_name");
-        title.setText("General Course: " + course_name);
+        int course_id = extras.getInt("course_id");
+        int lecture_id = extras.getInt("lecture_id");
 
+        Course course = null;
+        try {
+            course = courseRepository.getCourseById(course_id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        Lecture lecture = null;
+        try {
+            lecture = lectureRepository.getLectureById(lecture_id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        title.setText("General Course: " + course.getName());
+        name.setText(lecture.getName());
+        date.setText(lecture.getPlay_date());
+        content.setText(lecture.getContent());
+
+        Lecture finalLecture = lecture;
+        Course finalCourse = course;
         save_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (name.getText().toString().isEmpty()) {
-                    Toast.makeText(AddLectureActivity.this, "Lecture Name can't be empty!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditLectureActivity.this, "Lecture Name can't be empty!", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                Course course = courseRepository.getCourseByName1(course_name);
-                lectureRepository.addLecture(new Lecture(name.getText().toString(),content.getText().toString(), course.getCourse_id(), date.getText().toString()));
-                Intent intent = new Intent(AddLectureActivity.this, ViewCourseDetail.class);
-                intent.putExtra("course_name",course_name);
+                finalLecture.setName(name.getText().toString());
+                finalLecture.setPlay_date(date.getText().toString());
+                finalLecture.setContent(content.getText().toString());
+                lectureRepository.updateLecture(finalLecture);
+                Intent intent = new Intent(EditLectureActivity.this, ViewCourseDetail.class);
+                intent.putExtra("course_name", finalCourse.getName());
                 startActivity(intent);
             }
         });
         cancel_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AddLectureActivity.this, ViewCourseDetail.class);
-                intent.putExtra("course_name",course_name);
+                Intent intent = new Intent(EditLectureActivity.this, ViewCourseDetail.class);
+                intent.putExtra("course_name",finalCourse.getName());
                 startActivity(intent);
             }
         });

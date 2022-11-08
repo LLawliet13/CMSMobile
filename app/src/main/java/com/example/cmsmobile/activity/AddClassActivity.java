@@ -49,8 +49,9 @@ public class AddClassActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
-                int course_id = getIntent().getExtras().getInt("course_id");
+//                int course_id = getIntent().getExtras().getInt("course_id");
 
+                int course_id = 1;
                 Course course = null;
                 try {
                     course = courseRepository.getCourseById(course_id);
@@ -69,16 +70,17 @@ public class AddClassActivity extends AppCompatActivity {
                     Toast.makeText(AddClassActivity.this, "Class Name can't be empty!", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                Classes classes = new Classes(className, subjectCode, description, null, 1);
+                Classes classes = new Classes(className, subjectCode, description, null, 0);
                 if(classes==null){
                     Toast.makeText(AddClassActivity.this, "Class can't be found!", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 classRepository.addClasses(classes);
 
-                Intent intent = new Intent(AddClassActivity.this, ClassListActivity.class);
-                intent.putExtra("course_id", course_id);
-                startActivity(intent);
+                Toast.makeText(AddClassActivity.this, "Add class thành công", Toast.LENGTH_SHORT).show();
+//                Intent intent = new Intent(AddClassActivity.this, ClassListActivity.class);
+//                intent.putExtra("course_id", course_id);
+//                startActivity(intent);
             }
         });
     }

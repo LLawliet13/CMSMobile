@@ -30,11 +30,7 @@ public class AccountRepository {
         accountDAO.insert(account);
     }
 
-    public void execute() {
-        accountDAO.insert(new Account(6, "namprodz123@gmail.com", "namnguyen123", "namprodz123", "HN", "0982231418", 1, 6)
-                , new Account(7, "nampro@gmail.com", "namnguyen123", "namprodz", "HN", "0982231418", 2, 5)
-                , new Account(8, "nampro123@gmail.com", "namnguyen123", "namprodz222", "HN", "0982231418", 3, 4));
-    }
+
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public Account getAccountByEmail(String email) throws Exception {
@@ -59,13 +55,14 @@ public class AccountRepository {
             if (acc.getEmail().equals(email) && acc.getPassword().equals(password)) {
                 return acc;
             }
-
         }
         return null;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public Account getAccountById(int account_id) {
-        return accountDAO.getAll().stream().filter(a -> a.getAccount_id() == account_id).findFirst().get();
+    public Account getAccountById(int id) throws Exception {
+        return accountDAO.findById(id).orElseThrow(()->
+                new Exception("No Account Found")
+        );
     }
 }

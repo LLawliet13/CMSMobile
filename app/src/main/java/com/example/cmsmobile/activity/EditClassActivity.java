@@ -37,9 +37,9 @@ public class EditClassActivity extends AppCompatActivity {
         classRepository = new ClassRepository(this);
         courseRepository = new CourseRepository(this);
 
-        int class_id = getIntent().getExtras().getInt("class_id");
+//        int class_id = getIntent().getExtras().getInt("class_id");
 
-//        int class_id = 1;
+        int class_id = 1;
 
         try {
             classes = classRepository.getClassById(class_id);
@@ -47,6 +47,8 @@ public class EditClassActivity extends AppCompatActivity {
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
             return;
         }
+
+        etTeacher.setText("Nguyen Van Sang");
 
         if (classes == null) return;
 

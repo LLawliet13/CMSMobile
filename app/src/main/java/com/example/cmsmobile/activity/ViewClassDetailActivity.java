@@ -53,6 +53,9 @@ public class ViewClassDetailActivity extends AppCompatActivity {
 //        Bỏ comment của class_id bên dưới để chạy vào class trong course
 //        int class_id = getIntent().getExtras().getInt("class_id");
 
+//        courseRepository.addCourse(new Course("Course so 1"));
+//        classRepository.addClasses(new Classes("Class so 1", "PRM392", "Mobile Programming",null, 1));
+
         int class_id = 1;
         try {
             classes = classRepository.getClassById(class_id);
