@@ -59,7 +59,7 @@
             android:name=".activity.SearchCourseActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.EditClassActivity"
+            android:name=".activity.MainActivity"
             android:exported="true">
                         <intent-filter>
                             <action android:name="android.intent.action.MAIN" />
@@ -71,9 +71,9 @@
         <activity
             android:name=".activity.LoginActivity"
             android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".activity.EditClassActivity"-->
-<!--            android:exported="false" />-->
+        <activity
+            android:name=".activity.EditClassActivity"
+            android:exported="false" />
         <activity
             android:name=".activity.EditExamActivity"
             android:exported="false" />
