@@ -82,13 +82,13 @@
             android:text="  /  "
             android:textColor="@color/black" />
 
-<!--        <TextView-->
-<!--&lt;!&ndash;            android:id="@+id/tvClassRedirect"&ndash;&gt;-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Course Name"-->
-<!--            android:textColor="@color/black" />-->
-<!--    </GridLayout>-->
+        <TextView
+            android:id="@+id/tvClassRedirect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Course Name"
+            android:textColor="@color/black" />
+    </GridLayout>
 
     <TextView
         android:layout_width="match_parent"
@@ -116,87 +116,37 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:stretchColumns="1,2,3"/>
+        android:stretchColumns="0,1">
 
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Home"
-                android:textColor="@color/black" />
+        <TableRow>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="  /  "
-                android:textColor="@color/black" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Course"
-                android:textColor="@color/black" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="  /  "
-                android:textColor="@color/black" />
-
-            <TextView
-                android:id="@+id/tvClassRedirect"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Course Name"
-                android:textColor="@color/black" />
-        </GridLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/white" />
-
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/btnAddAnnouncement"
-                android:layout_gravity="end|top"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="25dp"
-                android:layout_marginBottom="10dp"
-                android:backgroundTint="@color/green_highlight"
-                android:text="+ Add exam"/>
-
-            <TextView
-                android:layout_column="1"
-                android:text="Due date"
-                android:textAlignment="center"
+                android:layout_column="0"
+                android:text="Title"
+                android:layout_marginLeft="40dp"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
 
             <TextView
                 android:layout_column="1"
                 android:text="Action"
-                android:textAlignment="center"
+                android:layout_marginLeft="100dp"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
 
-        </GridLayout>
+        </TableRow>
 
         <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
             android:layout_height="match_parent">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/AnnouncementView"
+                android:id="@+id/rcvExamView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp" />
         </ScrollView>
 
+    </TableLayout>
 
 </LinearLayout>
-

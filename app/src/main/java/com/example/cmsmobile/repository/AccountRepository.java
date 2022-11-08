@@ -26,38 +26,42 @@ public class AccountRepository {
         return accountDAO;
     }
 
-    public void addAccount(Account account){
+    public void addAccount(Account account) {
         accountDAO.insert(account);
     }
 
 
+
     @RequiresApi(api = Build.VERSION_CODES.N)
     public Account getAccountByEmail(String email) throws Exception {
-        return accountDAO.findByEmail(email).orElseThrow(()->
-             new Exception("No Account Found")
+        return accountDAO.findByEmail(email).orElseThrow(() ->
+                new Exception("No Account Found")
         );
     }
-    public List<Account> getAllAccounts(){
+
+    public List<Account> getAllAccounts() {
         List<Account> accountList = new ArrayList<>();
-         accountList.addAll(accountDAO.getAll());
+        accountList.addAll(accountDAO.getAll());
         return accountList;
     }
 
-    public void updateAccount(Account account){
+    public void updateAccount(Account account) {
         accountDAO.updateAccount(account);
     }
-    public Account Login(String email, String password){
+
+    public Account Login(String email, String password) {
         List<Account> accountList = accountDAO.getAll();
         for (Account acc : accountList) {
-            if(acc.getEmail().equals(email) && acc.getPassword().equals(password)){
+            if (acc.getEmail().equals(email) && acc.getPassword().equals(password)) {
                 return acc;
             }
-            
+
         }
         return null;
     }
+
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public Account getAccountById(int account_id){
+    public Account getAccountById(int account_id) {
         return accountDAO.getAll().stream().filter(a -> a.getAccount_id() == account_id).findFirst().get();
     }
 }

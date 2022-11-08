@@ -67,13 +67,15 @@
             android:name=".activity.SearchCourseActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.HomeActivity"
-            android:exported="false">
-<!--                        <intent-filter>-->
-<!--                            <action android:name="android.intent.action.MAIN" />-->
 
-<!--                            <category android:name="android.intent.category.LAUNCHER" />-->
-<!--                        </intent-filter>-->
+            android:name=".activity.HomeActivity"
+            android:exported="true">
+                        <intent-filter>
+                            <action android:name="android.intent.action.MAIN" />
+
+
+                            <category android:name="android.intent.category.LAUNCHER" />
+                        </intent-filter>
         </activity>
         <activity
             android:name=".activity.LoginActivity"
@@ -101,16 +103,18 @@
             android:exported="false" />
         <activity
             android:name=".activity.ClassListActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
+
          <activity
          android:name=".activity.ViewClassDetailActivity"
          android:exported="false" />
+
         <activity
             android:name=".activity.ViewExamActivity"
             android:exported="false" />
